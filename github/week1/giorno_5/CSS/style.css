@@ -1,0 +1,115 @@
+body {
+text-align: center;
+margin: 0;
+}
+
+/* header */
+
+header {
+background-color: black;
+margin: 0px;
+padding: 20px;
+}
+
+/* main */
+main {
+line-height: 1.2;
+font-size: 1.1em;
+
+}
+
+nav {
+    background-image: url(../Immagini/banner.jpg);
+    background-position: center center;
+    background-size: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+
+nav h1 {
+    padding: 0 125px;
+    margin-top: 0;
+    
+}
+nav p {
+    color: #5a5a58;
+}
+
+
+nav button {
+    background-color:#f04c2f;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+}
+
+section h3 {
+    color:#72B7CE ;
+}
+
+section p {
+    color: #5a5a58;
+    
+}
+
+div {
+    background-color: #F04C2F;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+div h2,h3,p {
+    color: white;
+}
+footer {
+    background-color:#29A0C4;
+    padding-bottom: 50px;
+}
+
+footer h2 {
+ color: white;
+ padding-top: 30px;
+}
+
+footer p {
+    margin: 0px;
+}
+footer p a {
+    color: white;
+}
+
+
+
+#foto {
+    padding: 0 25px;
+    margin-bottom: 50px;
+    
+}
+#notebook {
+    width: 300px;
+    border-radius: 150px;
+}
+
+ p {
+    padding: 0 30px;
+}
+
+h1 {
+    color: #38A7C8;
+}
+.notebook {
+    width: 320px;
+    margin-top: 40px;
+
+}
+
+#linea {
+    border-top: 1px solid white;
+    background-color:#29A0C4 ;
+    margin: 0 100px;
+    margin-top: 30px;
+    padding-bottom: 0px;
+    
+}
