@@ -1,0 +1,137 @@
+/* Your styles here */
+
+/******** body *******/
+
+body{
+    margin: 0;
+    background-color: #E8ECED;
+}
+
+/*********** header ************/
+
+header {
+    background-color: #273241;
+}
+
+header img {
+    width: 12vh;
+    padding: 1vh;
+    margin-left: 1%;
+}
+
+/****** nav ******/
+
+nav {
+    background-color: #394958;
+    width: 100%;
+    padding: 2px 0;
+    padding-left: 1%;
+    
+}
+nav p {
+    color: #FFFFFF;
+    display: inline;
+    margin: 1vh;
+}
+
+/*********** main **************/
+
+main {
+    margin: 3vh;
+   
+/****** section ******/
+}
+
+#Gift_Cards {
+    background-color: #F46603;
+}
+#Gift_Cards p {
+    text-align: center;
+    color: #FFFFFF;
+    padding: 5px 0;
+}
+
+#Gift_Guide {
+    background-image: url(../images/bg-image.png);
+    background-size: 90vw;
+}
+
+#Gift_Guide h2 {
+    text-align: center;
+    padding-top: 6vh;
+    color: #FFFFFF;
+}
+
+
+#Gift_Guide p {
+    text-align: center;
+    padding-bottom: 3vh;
+    color: #FFFFFF;
+}
+/****** figure ******/
+#images {
+    background-color: #FFFFFF;
+    text-align: center;
+    margin: 0;
+}
+
+
+
+figure h3 {
+    text-align: left;
+    padding-left: 2%;
+    padding-top: 1%;
+    margin-bottom: 0;
+}
+
+figure a {
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: #2E656B;
+}
+
+#images img {
+    width: 22%;
+    height: 20vw;
+    margin: 1%;
+    border-radius: 2vw;
+    box-shadow: 1px 1px 5px;
+}
+
+#Another_Gift {
+    text-align: center;
+    margin: 0;
+}
+
+#Another_Gift img {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#Another_Gift a {
+    text-decoration: none;
+    color: #19525F;
+}
+
+/**************** footer *****************/
+
+footer {
+    text-align: center;
+    background-color: #273241;
+    margin: 0;
+}
+
+aside {
+    background-color:#394959 ;
+    padding: 1px;
+
+}
+
+aside a {
+    color: #FFFFFF;
+}
+
+footer img {
+    width: 20vh;
+    padding: 5% 0;
+}
