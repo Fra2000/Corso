@@ -1,0 +1,16 @@
+body {
+    background-color: darkslateblue;
+    
+}
+form {
+    width: 50%;
+    height: 25%;
+    text-align: center;
+    background-color: darkcyan;
+    margin: 25%;
+    margin-top: 15%;
+  
+}
+form button {
+    cursor: pointer;
+}
