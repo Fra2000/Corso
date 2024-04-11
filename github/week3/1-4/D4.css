@@ -1,0 +1,40 @@
+
+    
+  
+  body {
+    margin: 0;
+
+    font-family: 'Outfit', sans-serif;
+    
+  }
+  #tabella {
+    width: 50%;
+    border: 1px solid black;
+    padding: 5em;
+    text-align: center;
+    margin: auto;
+    margin-top: 5em;
+
+  }
+  .cella {
+    display: inline-block;
+    width: 10%;
+    height: 30px;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
+    
+  }
+  button {
+    text-align: center;
+    border: 1px solid black;
+    width: 10%;
+    padding: 3px;
+    margin: 2%;
+    margin-left: 45%;
+
+    
+
+  }
