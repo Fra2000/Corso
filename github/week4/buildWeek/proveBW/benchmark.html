@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz epicode</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap');
+    </style>
+</head>
+<div id="benchmark">
+<body>
+    
+
+
+    <div class="quiz">
+        <div id="container">
+            <canvas id="countdownCanvas" width="200" height="200"></canvas>
+        </div>
+        <div class="imgDiv">
+            <img id="logo" src="./img/epicode_logo.png" alt="logo">
+            <div id="timerContainer"> <!-- Aggiunto un div per contenere il timer -->
+                <div id="timer"></div>
+            </div>
+        </div>
+    
+        <h2 id="question">Question here</h2>
+        <div id="answer-buttons"></div><!--div per i bottoni delle risposte-->
+        
+        <div id="controls">
+            <p id="number-question"></p><!--paragrafo per indice domanda attuale(Question 1/10...2/20 ecc)-->
+            <button id="next-btn">NEXT →</button>
+        </div>
+    </div>
+
+
+
+<script src="./js/scriptBenchmark.js"></script>
+
+</div>
+</body>
+</html>

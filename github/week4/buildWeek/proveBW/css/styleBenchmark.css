@@ -1,0 +1,271 @@
+body {
+    background-image: url(../img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra l'intero contenuto verticalmente */
+    height: 100vh;
+}
+
+.quiz {
+    margin-top: 15rem;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; /* Imposta una larghezza fissa per il contenitore */
+    max-width: 100%; /* Assicura che il contenitore non superi la larghezza massima del viewport */
+}
+
+
+
+#answer-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Due colonne di larghezza uguale */
+    gap: 1em; /* Spazio tra i bottoni */
+    justify-content: center; /* Centra i bottoni sull'asse x */
+}
+
+
+#logoEpicode{
+    width:6rem;
+    height:2rem;;
+    position: absolute; /* Posiziona l'elemento in modo assoluto rispetto al contenitore padre */
+    top: 0.5rem; /* Posiziona l'elemento all'inizio della pagina */
+    left: 11rem; /* Posiziona l'elemento a sinistra */
+    
+}
+
+
+h2 {
+    color: white;
+    margin-bottom: 4rem;
+}
+
+#number-question {
+    color: white;
+    text-align: left; /* Allinea il testo a sinistra */
+    margin: 0; /* Rimuove il margine predefinito */
+    margin-top:3rem;
+}
+
+#controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Assicura che il div si estenda per tutta la larghezza */
+    max-width: 100%;
+}
+
+#next-btn {
+    background-color: transparent; /* Rimuove il colore di sfondo */
+    border: none; /* Rimuove il bordo */
+    margin-left: auto;
+    margin-top: 3rem;
+    color: white; /* Imposta il testo in bianco */
+    border:2px solid white;
+    padding:1rem 2rem;
+}
+
+#next-btn:hover{
+    background-color: #D20094;
+    
+}
+
+
+
+
+.btn {
+    background-color: rgba(255, 255, 255, 0.1); /* Sfondo bianco con opacità del 10% */
+    width: 100%; /* Larghezza del 100% per adattarsi alle colonne */
+    height: 50px; /* Altezza fissa per i bottoni */
+    margin-bottom: 10px; /* Spazio inferiore tra i bottoni */
+    color: white;
+    border-radius: 25px; /* Arrotonda completamente i bordi */
+    border-top: 2px solid rgb(255, 255, 255,0.7); /* Bordo bianco con opacità del 20% sopra */
+    border-left: 2px solid rgb(255, 255, 255,0.5); /* Bordo bianco con opacità del 20% sopra */
+    border-right: 2px solid rgb(255, 255, 255,0.5); /* Bordo bianco con opacità del 20% sopra */
+    border-bottom: none;
+    overflow: hidden; /* Nasconde qualsiasi contenuto al di fuori del bordo */
+    
+}
+
+.btn:hover {
+    background-color: #D20094;
+    border-bottom : 2px solid #900080;
+}
+.btn.selected {
+    background-color: #D20094;
+    border-bottom: 2px solid #900080;
+}
+
+
+.question-count { /*colore sulla parte in basso , dove mette su quale domanda ci troviamo tipo question 1/10*/
+    color:  #900080;
+    font-weight:900;
+}
+
+
+
+/******************************************CSS per timer**************************************************************/
+#container {
+    color: white;
+    position: absolute; 
+    top: 0; /* Posiziona l'elemento all'inizio della pagina */
+    right: 0; /* Posiziona l'elemento a sinistra */
+    margin-top: 2rem;
+    margin-right: 11rem;
+    
+    
+}
+
+#timer {
+    font-size: 2rem;
+}
+
+/*******************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#benchmark  {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra l'intero contenuto verticalmente */
+    height: 100vh;
+}
+
+#benchmark h2 {
+    font-size: 40px;
+}
+.quiz {
+    margin-top: 10rem;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; /* Imposta una larghezza fissa per il contenitore */
+    max-width: 100%; /* Assicura che il contenitore non superi la larghezza massima del viewport */
+}
+
+
+
+#answer-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Due colonne di larghezza uguale */
+    gap: 1em; /* Spazio tra i bottoni */
+    justify-content: center; /* Centra i bottoni sull'asse x */
+}
+
+
+ #benchmark #logo{
+    width: 15em;
+    position: absolute; /* Posiziona l'elemento in modo assoluto rispetto al contenitore padre */
+    top: 0.5rem; /* Posiziona l'elemento all'inizio della pagina */
+    left: 11rem; /* Posiziona l'elemento a sinistra */
+    
+}
+
+
+h2 {
+    color: white;
+    margin-bottom: 4rem;
+}
+
+#number-question {
+    color: white;
+    text-align: left; /* Allinea il testo a sinistra */
+    margin: 0; /* Rimuove il margine predefinito */
+    margin-top:3rem;
+}
+
+#controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Assicura che il div si estenda per tutta la larghezza */
+    max-width: 100%;
+}
+
+#next-btn {
+    background-color: transparent; /* Rimuove il colore di sfondo */
+    border: none; /* Rimuove il bordo */
+    margin-left: auto;
+    margin-top: 3rem;
+    color: white; /* Imposta il testo in bianco */
+    border:2px solid white;
+    padding:1rem 2rem;
+}
+
+#next-btn:hover{
+    background-color: #D20094;
+    
+}
+
+
+
+
+.btn {
+    background-color: rgba(255, 255, 255, 0.1); /* Sfondo bianco con opacità del 10% */
+    width: 90%; /* Larghezza del 100% per adattarsi alle colonne */
+    height: 50px; /* Altezza fissa per i bottoni */
+    margin-bottom: 10px; /* Spazio inferiore tra i bottoni */
+    color: white;
+    border-radius: 25px; /* Arrotonda completamente i bordi */
+    border-top: 2px solid rgb(255, 255, 255,0.7); /* Bordo bianco con opacità del 20% sopra */
+    border-left: 2px solid rgb(255, 255, 255,0.5); /* Bordo bianco con opacità del 20% sopra */
+    border-right: 2px solid rgb(255, 255, 255,0.5); /* Bordo bianco con opacità del 20% sopra */
+    border-bottom: none;
+    overflow: hidden; /* Nasconde qualsiasi contenuto al di fuori del bordo */
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+    
+}
+
+.btn:hover {
+    background-color: #D20094;
+    border-bottom : 2px solid #900080;
+}
+.btn.selected {
+    background-color: #D20094;
+    border-bottom: 2px solid #900080;
+}
+
+.question-count { /*colore sulla parte in basso , dove mette su quale domanda ci troviamo tipo question 1/10*/
+    color:  #900080;
+    font-weight:900;
+}
+
+
+
+/******************************************CSS per timer**************************************************************/
+#container {
+    color: white;
+    position: absolute; 
+    top: 0; /* Posiziona l'elemento all'inizio della pagina */
+    right: 0; /* Posiziona l'elemento a sinistra */
+    margin-top: 2rem;
+    margin-right: 11rem;
+    
+    
+}
+
+#timer {
+    font-size: 2rem;
+}
+
+/*******************************************************************************************************************/
