@@ -1,0 +1,143 @@
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import "./bootstrap/scss/functions";
+@import "./bootstrap/scss/variables";
+
+$new-primary: #1b1b1b;
+$new-white: #fdfdfd;
+$black: #000;
+$grey:#8B8B89;
+
+
+$new-theme-colors: (
+   "primary": $new-primary,
+   "dark": $gray-800,
+   "secondary": $new-white,
+   "black": $black,
+   "grey":$grey,
+);
+
+$theme-colors: map-merge($theme-colors, $new-theme-colors );
+@import "./bootstrap/scss/bootstrap.scss";
+
+
+
+h6 {
+   cursor: pointer;
+   font-weight: 100;
+   &:hover {
+      font-weight: bold;
+   }
+}
+
+ul li {
+   list-style: none;
+   cursor: pointer;
+   &:hover {
+      font-weight: bold;
+   }
+}
+img {
+   cursor: pointer;
+}
+
+.bottone {
+   font-weight: 500;
+   &:hover {
+      font-weight: bold;
+   }
+}
+
+input[type="checkbox"] {
+   width: 2rem;
+   height: 2rem;
+   border: 1px solid rgb(247, 241, 241);
+   background-color: transparent;
+   cursor: pointer;
+ 
+   &:checked {
+     background-color: transparent;
+     box-shadow: none;
+     border: 1px solid rgb(247, 241, 241);
+   }
+ 
+   &:focus {
+     background-color: transparent;
+     border-color: none;
+     box-shadow: none;
+     border: 1px solid rgb(247, 241, 241);
+     outline: none;
+   }
+ }
+
+
+
+
+
+
+
+
+
+.row.riga {
+  overflow: scroll;
+  width: 100%;
+ 
+ 
+}
+.row__inner {
+  -webkit-transition: 450ms;
+  transition: 450ms;
+  transition: 450ms transform;
+  transition: 450ms transform, 450ms;
+  font-size: 0;
+  white-space: nowrap;
+  margin: 40px 0;
+  
+}
+.tile {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 140.625px;
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-transition: 450ms all;
+  transition: 450ms all;
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+}
+.tile__img {
+  width: 250px;
+  height: 140.625px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+div i {
+   cursor: pointer;
+}
+
+
+
+
+.tile:hover .tile__details {
+  opacity: 1;
+}
+.tile__title {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+}
+
+.row__inner:hover .tile {
+  opacity: 0.3;
+}
+.row__inner:hover .tile:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  opacity: 1;
+}
+.tile:hover ~ .tile {
+  -webkit-transform: translate3d(125px, 0, 0);
+          transform: translate3d(125px, 0, 0);
+}
