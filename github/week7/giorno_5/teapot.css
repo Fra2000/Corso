@@ -1,0 +1,21 @@
+main {
+  background-image: url("https://www.liveabout.com/thmb/rMU5h016FWlzc5tsOIYd5hefTnw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/469027587-56ab5ab65f9b58b7d00972fb.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+header,
+footer {
+  background-color: #f8b7dd;
+}
+header h4,
+header h2,
+header h5,
+header h1,
+footer h4,
+footer h2,
+footer h5,
+footer h1 {
+  color: white;
+}/*# sourceMappingURL=teapot.css.map */
