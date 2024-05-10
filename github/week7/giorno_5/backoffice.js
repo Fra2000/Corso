@@ -137,7 +137,7 @@ const submitEvent = function (e) {
     .then((response) => {
       if (response.ok) {
         // il concerto è stato salvato!
-        alert(`Concerto ${eventId ? "modificato" : "creato"}!`);
+        alert(`Teiera ${eventId ? "modificata" : "creata"}!`);
       } else {
         // il concerto NON è stato salvato! -> andare nel network tab del browser e indagare lì
         throw new Error("Errore nel salvataggio della risorsa");
