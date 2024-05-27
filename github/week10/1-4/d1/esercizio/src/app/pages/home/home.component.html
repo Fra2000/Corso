@@ -1,0 +1,42 @@
+<h2>Post in evidenza</h2>
+<div id="featured-post" *ngIf="firstPost">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{firstPost.title}}</h5>
+      <p class="card-text">{{firstPost.body}}</p>
+    </div>
+  </div>
+</div>
+
+
+<h2>Tutti i posts</h2>
+<div class="row">
+  <div class="col-12 col-md-6 col-lg-3" *ngFor="let p of postsArr">
+
+    <div class="card" [ngClass]="{
+      'bg-success': p.active,
+      'bg-danger':!p.active
+    }">
+      <div class="card-body">
+        <h5 class="card-title">{{p.title}}</h5>
+        <p class="card-text">{{p.body}}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<h2>Potrebbero piacerti questi posts</h2>
+<div class="row">
+  <div class="col-12 col-md-6 col-lg-3" *ngFor="let p of randomPosts">
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{p.title}}</h5>
+        <p class="card-text">{{p.body}}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
