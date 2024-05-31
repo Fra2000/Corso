@@ -1,1 +1,19 @@
-<p>home works!</p>
+<div class="container bg-dark">
+  <div class="row">
+    <div class="col-12" *ngFor="let p of todosArr">
+      <div
+        class="m-3 p-2 border"
+        [ngClass]="{
+          'text-bg-success': p.completed,
+          'text-bg-danger': !p.completed
+        }"
+      >
+        <h3>{{ p.todo }}</h3>
+        <h5>
+          compito assegnato a: {{ p.author?.firstName }}
+          {{ p.author?.lastName }} ID: {{ p.userId }}
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>

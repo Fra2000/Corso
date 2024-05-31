@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { iUsers } from './models/i-users';
 
@@ -5,6 +6,12 @@ import { iUsers } from './models/i-users';
   providedIn: 'root'
 })
 export class UsersService {
+  find(arg0: (a: any) => boolean) {
+    throw new Error('Method not implemented.');
+  }
+  map(arg0: (i: any) => void) {
+    throw new Error('Method not implemented.');
+  }
 
   usersArr:iUsers[]=[
     {
