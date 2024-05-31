@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { iPhotos } from './models/iphotos';
 
 @Injectable({
@@ -12,7 +12,14 @@ export class PhotosService {
 
   constructor(private http:HttpClient) { }
 
-getAllPhotos():Observable<iPhotos[]>{
+getAllPhotos(){
   return this.http.get<iPhotos[]>(this.apiUrl)
+  .pipe(catchError(error=>throwError(()=>new Error('errore'))))
 }
+
+delete(id:number)
+{return this.http.delete<iPhotos>(`${this.apiUrl}/${id}`)
+.pipe(catchError(error=>throwError(()=>new Error('errore'))))
+}
+
 }

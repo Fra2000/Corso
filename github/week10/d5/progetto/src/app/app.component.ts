@@ -6,15 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  AllPhotos:iPhotos[]=[]
-
-  constructor(private getPhotos:PhotosService){}
-
-  ngOninit(){
-
-  this.getPhotos.getAllPhotos().subscribe(AllPhotos=>{
-    this.AllPhotos=AllPhotos
-  })
-
-  }
+  title = 'progetto';
 }
