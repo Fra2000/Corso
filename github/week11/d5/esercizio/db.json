@@ -1,0 +1,98 @@
+{
+  "users": [
+    {
+      "email": "dd@jn.com",
+      "password": "$2a$10$CtsRKuYx20IA0ulOTipkk.jIRdpkY2xhvBZRg8z/migzmOUeRg3iC",
+      "nome": "fd",
+      "id": 1
+    },
+    {
+      "email": "ciao@maio",
+      "password": "$2a$10$Mk.dsfEEtqDL67j.iqUgiOK27OO3dpbVowWcj1hbM6k.8RqNfJ20a",
+      "nome": "ciao",
+      "id": 2
+    },
+    {
+      "email": "fra@fra",
+      "password": "$2a$10$X4ysvhxpmKAUuHZj5rQ6MuqM3HA0JyVjHKU25TRLJDN8Syb9Pc00i",
+      "nome": "franc",
+      "id": 3
+    },
+    {
+      "email": "bbb@bbb",
+      "password": "$2a$10$Fvegjs3IuCaC9/onZQj4l.kQmY3veAwcovIh1U9T1QWLZ3AC55Hsq",
+      "nome": "aaaaaa",
+      "id": 4
+    }
+  ],
+  "movies": [
+    {
+      "nome":"La compagnia dell'anello",
+      "uscita":"2002",
+      "Url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSH6EMtzVsEMEIURrK6FPgXEvo2U9WcRvlyg&usqp=CAU",
+      "id":1
+    },
+    {
+      "nome":"Narnia",
+      "uscita":"2005",
+      "Url":"https://play-lh.googleusercontent.com/FcjGbvkJaGIXG3hghPUWQL-K6vKuQY7MzelB3njQPSUVE2-xvCIcdsthSjA1CR3W2DJl=w240-h480-rw",
+      "id":2
+    },
+    {
+      "nome":"Simpson",
+      "uscita":"2007",
+      "Url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU19KOpZgP2R7FrMxVmEhB8BQKXczTazq6wg&usqp=CAU",
+      "id":3
+    },
+    {
+      "nome":"I puffi",
+      "uscita":"2017",
+      "Url":"https://pad.mymovies.it/filmclub/2015/06/093/locandina.jpg",
+      "id":4
+    }
+  ],
+  "favourite":[
+    {
+      "infmovie":{
+        "nome":"La compagnia dell'anello",
+      "uscita":"2002",
+      "Url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSH6EMtzVsEMEIURrK6FPgXEvo2U9WcRvlyg&usqp=CAU",
+      "id":1
+      },
+      "id":1,
+      "movieId":1
+    },
+    {
+      "infmovie":{
+        "nome":"Narnia",
+      "uscita":"2005",
+      "Url":"https://play-lh.googleusercontent.com/FcjGbvkJaGIXG3hghPUWQL-K6vKuQY7MzelB3njQPSUVE2-xvCIcdsthSjA1CR3W2DJl=w240-h480-rw",
+      "id":2
+      },
+      "id":2,
+      "movieId":2
+    },
+    {
+      "infmovie":{
+        "nome":"Simpson",
+      "uscita":"2007",
+      "Url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU19KOpZgP2R7FrMxVmEhB8BQKXczTazq6wg&usqp=CAU",
+      "id":3
+      },
+      "id":3,
+      "movieId":3
+    },
+    {
+      "infmovie":{
+        "nome":"I puffi",
+      "uscita":"2017",
+      "Url":"https://pad.mymovies.it/filmclub/2015/06/093/locandina.jpg",
+      "id":4
+      },
+      "id":4,
+      "movieId":4
+    }
+
+  ]
+
+}
