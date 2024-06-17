@@ -1,0 +1,15 @@
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\1-4\d1\primoprogetto\primoprogetto\bin\Debug\net8.0\primoprogetto.exe
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\1-4\d1\primoprogetto\primoprogetto\bin\Debug\net8.0\primoprogetto.deps.json
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\1-4\d1\primoprogetto\primoprogetto\bin\Debug\net8.0\primoprogetto.runtimeconfig.json
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\1-4\d1\primoprogetto\primoprogetto\bin\Debug\net8.0\primoprogetto.dll
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\1-4\d1\primoprogetto\primoprogetto\bin\Debug\net8.0\primoprogetto.pdb
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\1-4\d1\primoprogetto\primoprogetto\obj\Debug\net8.0\primoprogetto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\1-4\d1\primoprogetto\primoprogetto\obj\Debug\net8.0\primoprogetto.AssemblyInfoInputs.cache
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\1-4\d1\primoprogetto\primoprogetto\obj\Debug\net8.0\primoprogetto.AssemblyInfo.cs
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\1-4\d1\primoprogetto\primoprogetto\obj\Debug\net8.0\primoprogetto.csproj.CoreCompileInputs.cache
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\1-4\d1\primoprogetto\primoprogetto\obj\Debug\net8.0\primoprogetto.sourcelink.json
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\1-4\d1\primoprogetto\primoprogetto\obj\Debug\net8.0\primoprogetto.dll
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\1-4\d1\primoprogetto\primoprogetto\obj\Debug\net8.0\refint\primoprogetto.dll
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\1-4\d1\primoprogetto\primoprogetto\obj\Debug\net8.0\primoprogetto.pdb
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\1-4\d1\primoprogetto\primoprogetto\obj\Debug\net8.0\primoprogetto.genruntimeconfig.cache
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\1-4\d1\primoprogetto\primoprogetto\obj\Debug\net8.0\ref\primoprogetto.dll
