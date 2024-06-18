@@ -17,11 +17,11 @@ namespace secondogiorno
         public string getCognome { get { return cognome; } set { this.cognome = value; } }
         public byte getEta { get { return eta; } set { this.eta = value; } }
 
-        public Persona(string getNome, string getCognome, byte getEta)
+        public Persona(string nome, string cognome, byte eta)
         {
-            this.nome = getNome;
-            this.cognome = getCognome;
-            this.eta = getEta;
+            this.nome = nome;
+            this.cognome = cognome;
+            this.eta = eta;
         }
         public string getDescrizione()
         {
