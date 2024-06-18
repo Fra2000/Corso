@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("secondogiorno")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e7fe06ba2e66a03132e024953579d5a8eaee775")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26722befcbdfc3cc5e5096329d2bc78ed34cc13a")]
 [assembly: System.Reflection.AssemblyProductAttribute("secondogiorno")]
 [assembly: System.Reflection.AssemblyTitleAttribute("secondogiorno")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

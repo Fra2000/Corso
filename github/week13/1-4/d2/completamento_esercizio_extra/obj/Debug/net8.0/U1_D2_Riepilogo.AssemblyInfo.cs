@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("U1_D2_Riepilogo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+adf48867155b14b70c311f4ed9f2df2896b6b23e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26722befcbdfc3cc5e5096329d2bc78ed34cc13a")]
 [assembly: System.Reflection.AssemblyProductAttribute("U1_D2_Riepilogo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("U1_D2_Riepilogo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
