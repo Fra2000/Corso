@@ -1,13 +1,24 @@
-﻿namespace secondogiorno
+﻿using System.Reflection.Metadata;
+
+namespace secondogiorno
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            Persona francesco = new Persona("Francesco", "Giannini",24);
-            francesco.getDescrizione();
-            Console.WriteLine(francesco.getDescrizione());
+            Persona primaPersona = new Persona("Francesco", "Giannini", 24);
+           // francesco.getNome = "marco"; es1
+
+            primaPersona.getDescrizione();
+            Console.WriteLine(primaPersona.getDescrizione());
+
+            primaPersona.ersona();
+            Console.WriteLine(primaPersona.ersona());
+
+
+            primaPersona.ersona("francesco");
+            Console.WriteLine(primaPersona.ersona("francesco"));
         }
     }
 }
