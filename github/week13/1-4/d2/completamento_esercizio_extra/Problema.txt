@@ -1,0 +1,10 @@
+﻿Scrivere una classe che implementi un servizio applicativo in grado di <scrivere in 
+lettere un numero che arrivi ad esso in input>.
+Esempio:
+input -> 123 
+output -> centoventitre
+
+
++-------- NumbersTranslator ---------+
+| translate(int) -> string           |
++------------------------------------+
