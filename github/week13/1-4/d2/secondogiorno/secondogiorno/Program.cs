@@ -8,6 +8,7 @@ namespace secondogiorno
         {
             Console.WriteLine("Hello, World!");
             Persona primaPersona = new Persona("Francesco", "Giannini", 24);
+            Persona secondaPersona = new Persona("Michele");
 
            // primaPersona.getNome = "marco"; es1
 
