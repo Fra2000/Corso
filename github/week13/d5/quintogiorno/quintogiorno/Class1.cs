@@ -11,17 +11,18 @@ namespace quintogiorno
         public class Contribuente
         {
             // Proprietà della classe Contribuente
-            public string Nome { get; set; }
-            public string Cognome { get; set; }
-            public DateTime DataNascita { get; set; }
-            public string CodiceFiscale { get; set; }
-            public string Sesso { get; set; }
-            public string ComuneResidenza { get; set; }
-            public decimal RedditoAnnuale { get; set; }
+            public string Nome { get; private set; }
+            public string Cognome { get; private set; }
+            public DateTime DataNascita { get; private set; }
+            public string CodiceFiscale { get; private set; }
+            public string Sesso { get; private set; }
+            public string ComuneResidenza { get; private set; }
+            public decimal RedditoAnnuale { get; private set; }
 
-            // Costruttore della classe Contribuente
+            // Costruttore vuoto della classe Contribuente
             public Contribuente() { }
 
+            // Metodo che serve per salvare i dati nelle proprietà
             public void proprieta(string nome, string cognome, DateTime dataNascita, string codiceFiscale, string sesso, string comuneResidenza, decimal redditoAnnuale)
             {
                 Nome = nome;
@@ -46,19 +47,23 @@ namespace quintogiorno
 
                 // Calcolo dell'imposta utilizzando switch
                 switch (reddito)
-                {
+                {   // Nel caso in cui il reddito è inferiore o uguale a 15000
                     case decimal r1 when r1 <= limitiScaglioni[0]:
                         imposta = reddito * aliquote[0];
                         break;
+                    // Nel caso in cui il reddito è inferiore o uguale a 28000
                     case decimal r2 when r2 <= limitiScaglioni[1]:
                         imposta = 3450 + ((reddito - limitiScaglioni[0]) * aliquote[1]);
                         break;
+                    // Nel caso in cui il reddito è inferiore o uguale a 55000
                     case decimal r3 when r3 <= limitiScaglioni[2]:
                         imposta = 6960 + ((reddito - limitiScaglioni[1]) * aliquote[2]);
                         break;
+                    // Nel caso in cui il reddito è inferiore o uguale a 75000
                     case decimal r4 when r4 <= limitiScaglioni[3]:
                         imposta = 17220 + ((reddito - limitiScaglioni[2]) * aliquote[3]);
                         break;
+                    // Nel caso in cui il reddito è superiore a 75000
                     case decimal r5 when r5 > limitiScaglioni[3]:
                         imposta = 25420 + ((reddito - limitiScaglioni[3]) * aliquote[4]);
                         break;
