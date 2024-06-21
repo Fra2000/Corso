@@ -1,0 +1,15 @@
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\d5\quintogiorno\quintogiorno\bin\Debug\net8.0\quintogiorno.exe
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\d5\quintogiorno\quintogiorno\bin\Debug\net8.0\quintogiorno.deps.json
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\d5\quintogiorno\quintogiorno\bin\Debug\net8.0\quintogiorno.runtimeconfig.json
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\d5\quintogiorno\quintogiorno\bin\Debug\net8.0\quintogiorno.dll
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\d5\quintogiorno\quintogiorno\bin\Debug\net8.0\quintogiorno.pdb
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\d5\quintogiorno\quintogiorno\obj\Debug\net8.0\quintogiorno.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\d5\quintogiorno\quintogiorno\obj\Debug\net8.0\quintogiorno.AssemblyInfoInputs.cache
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\d5\quintogiorno\quintogiorno\obj\Debug\net8.0\quintogiorno.AssemblyInfo.cs
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\d5\quintogiorno\quintogiorno\obj\Debug\net8.0\quintogiorno.csproj.CoreCompileInputs.cache
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\d5\quintogiorno\quintogiorno\obj\Debug\net8.0\quintogiorno.sourcelink.json
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\d5\quintogiorno\quintogiorno\obj\Debug\net8.0\quintogiorno.dll
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\d5\quintogiorno\quintogiorno\obj\Debug\net8.0\refint\quintogiorno.dll
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\d5\quintogiorno\quintogiorno\obj\Debug\net8.0\quintogiorno.pdb
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\d5\quintogiorno\quintogiorno\obj\Debug\net8.0\quintogiorno.genruntimeconfig.cache
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week13\d5\quintogiorno\quintogiorno\obj\Debug\net8.0\ref\quintogiorno.dll

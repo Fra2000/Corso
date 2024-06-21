@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fra00\\OneDrive\\Documenti\\Programmazione\\Corso\\github\\week13\\d5\\quintogiorno\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "C:\\Users\\fra00\\OneDrive\\Documenti\\Programmazione\\Corso\\github\\week13\\d5\\quintogiorno\\quintogiorno\\quintogiorno.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fra00\\OneDrive\\Documenti\\Programmazione\\Corso\\github\\week13\\d5\\quintogiorno\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "C:\\Users\\fra00\\OneDrive\\Documenti\\Programmazione\\Corso\\github\\week13\\d5\\quintogiorno\\quintogiorno\\quintogiorno.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fra00\\OneDrive\\Documenti\\Programmazione\\Corso\\github\\week13\\d5\\quintogiorno\\ConsoleApp1\\ConsoleApp1.csproj",
-        "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Users\\fra00\\OneDrive\\Documenti\\Programmazione\\Corso\\github\\week13\\d5\\quintogiorno\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "C:\\Users\\fra00\\OneDrive\\Documenti\\Programmazione\\Corso\\github\\week13\\d5\\quintogiorno\\quintogiorno\\quintogiorno.csproj",
+        "projectName": "quintogiorno",
+        "projectPath": "C:\\Users\\fra00\\OneDrive\\Documenti\\Programmazione\\Corso\\github\\week13\\d5\\quintogiorno\\quintogiorno\\quintogiorno.csproj",
         "packagesPath": "C:\\Users\\fra00\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fra00\\OneDrive\\Documenti\\Programmazione\\Corso\\github\\week13\\d5\\quintogiorno\\ConsoleApp1\\obj\\",
+        "outputPath": "C:\\Users\\fra00\\OneDrive\\Documenti\\Programmazione\\Corso\\github\\week13\\d5\\quintogiorno\\quintogiorno\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
