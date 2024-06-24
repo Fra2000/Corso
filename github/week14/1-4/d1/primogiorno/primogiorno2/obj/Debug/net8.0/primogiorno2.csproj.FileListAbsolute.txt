@@ -1,0 +1,15 @@
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d1\primogiorno\primogiorno2\bin\Debug\net8.0\primogiorno2.exe
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d1\primogiorno\primogiorno2\bin\Debug\net8.0\primogiorno2.deps.json
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d1\primogiorno\primogiorno2\bin\Debug\net8.0\primogiorno2.runtimeconfig.json
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d1\primogiorno\primogiorno2\bin\Debug\net8.0\primogiorno2.dll
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d1\primogiorno\primogiorno2\bin\Debug\net8.0\primogiorno2.pdb
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d1\primogiorno\primogiorno2\obj\Debug\net8.0\primogiorno2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d1\primogiorno\primogiorno2\obj\Debug\net8.0\primogiorno2.AssemblyInfoInputs.cache
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d1\primogiorno\primogiorno2\obj\Debug\net8.0\primogiorno2.AssemblyInfo.cs
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d1\primogiorno\primogiorno2\obj\Debug\net8.0\primogiorno2.csproj.CoreCompileInputs.cache
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d1\primogiorno\primogiorno2\obj\Debug\net8.0\primogiorno2.sourcelink.json
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d1\primogiorno\primogiorno2\obj\Debug\net8.0\primogiorno2.dll
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d1\primogiorno\primogiorno2\obj\Debug\net8.0\refint\primogiorno2.dll
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d1\primogiorno\primogiorno2\obj\Debug\net8.0\primogiorno2.pdb
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d1\primogiorno\primogiorno2\obj\Debug\net8.0\primogiorno2.genruntimeconfig.cache
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d1\primogiorno\primogiorno2\obj\Debug\net8.0\ref\primogiorno2.dll
