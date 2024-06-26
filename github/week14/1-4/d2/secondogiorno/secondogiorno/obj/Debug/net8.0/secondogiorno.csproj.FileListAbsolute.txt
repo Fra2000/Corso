@@ -1,0 +1,12 @@
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d2\secondogiorno\secondogiorno\bin\Debug\net8.0\secondogiorno.deps.json
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d2\secondogiorno\secondogiorno\bin\Debug\net8.0\secondogiorno.dll
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d2\secondogiorno\secondogiorno\bin\Debug\net8.0\secondogiorno.pdb
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d2\secondogiorno\secondogiorno\obj\Debug\net8.0\secondogiorno.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d2\secondogiorno\secondogiorno\obj\Debug\net8.0\secondogiorno.AssemblyInfoInputs.cache
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d2\secondogiorno\secondogiorno\obj\Debug\net8.0\secondogiorno.AssemblyInfo.cs
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d2\secondogiorno\secondogiorno\obj\Debug\net8.0\secondogiorno.csproj.CoreCompileInputs.cache
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d2\secondogiorno\secondogiorno\obj\Debug\net8.0\secondogiorno.sourcelink.json
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d2\secondogiorno\secondogiorno\obj\Debug\net8.0\secondogiorno.dll
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d2\secondogiorno\secondogiorno\obj\Debug\net8.0\refint\secondogiorno.dll
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d2\secondogiorno\secondogiorno\obj\Debug\net8.0\secondogiorno.pdb
+C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week14\1-4\d2\secondogiorno\secondogiorno\obj\Debug\net8.0\ref\secondogiorno.dll

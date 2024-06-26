@@ -1,0 +1,25 @@
+﻿@using secondogiorno
+@model CV
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a asp-action="Exp">Esperienza</a>|<a asp-action="info">Info</a>|<a asp-action="Study">Studi</a>
+
+<div class="text-center">
+    <h1 class="display-4">Curriculum di @Model.personalInfo.Name @Model.personalInfo.SurName</h1>
+   
+</div>
+@foreach(var s in Model.Studio)
+{
+    <div>
+        @s.Istituto dal @s.Dal al @s.Al
+    </div>
+}
+
+@foreach (var s in Model.Impiego)
+{
+    <div>
+        @s.Azienda dal @s.Dal al @s.Al
+    </div>
+}

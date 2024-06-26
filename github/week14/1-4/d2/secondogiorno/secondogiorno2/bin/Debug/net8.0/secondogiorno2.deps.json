@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "secondogiorno2/1.0.0": {
+        "dependencies": {
+          "secondogiorno": "1.0.0"
+        },
+        "runtime": {
+          "secondogiorno2.dll": {}
+        }
+      },
+      "secondogiorno/1.0.0": {
+        "runtime": {
+          "secondogiorno.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "secondogiorno2/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "secondogiorno/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
