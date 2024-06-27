@@ -1,0 +1,33 @@
+﻿@model List<D_3.Models.Biglietto>
+
+@{
+    ViewData["Title"] = "Riepilogo Biglietti Venduti";
+}
+
+<h1>Riepilogo Biglietti Venduti</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th>Cognome</th>
+            <th>Sala</th>
+            <th>Tipo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var biglietto in Model)
+        {
+            <tr>
+                <td>@biglietto.Nome</td>
+                <td>@biglietto.Cognome</td>
+                <td>@biglietto.Sala</td>
+                <td>@biglietto.Tipo</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Index">Torna al menu</a>
+</div>

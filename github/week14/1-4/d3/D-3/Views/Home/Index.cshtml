@@ -1,0 +1,22 @@
+﻿@model List<D_3.Models.Sala>
+
+<h1 class="text-center my-3">The Space Biglietti</h1>
+<div class="container">
+    <div class=" row row-cols-3">
+@foreach (var sala in Model)
+{
+    <div class=" col text-center my-5">
+        <h2 class="display-4">@sala.Nome</h2>
+        <p>Biglietti Totali venduti: @sala.BigliettiTotali di 120</p> <!-- Corretto per mostrare il conteggio -->
+        <p>Biglietti Ridotti Venduti: @sala.BigliettiRidotti</p>
+    </div>
+       
+}
+    </div>
+  
+</div>
+<div class="text-center">
+    <a asp-action="Riepilogo" class="btn btn-primary">Riepilogo Biglietti Venduti</a>
+</div>
+
+
