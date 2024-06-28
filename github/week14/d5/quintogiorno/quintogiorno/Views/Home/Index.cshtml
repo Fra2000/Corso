@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container mt-5 p-5 border border-white border-3">
+    <h2 class="mb-4 text-center">Elenco Prodotti</h2>
+    
+    @if (Model.Any())
+    {
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr class="text-white">
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Prezzo</th>
+                    <th>Descrizione</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr class="text-white">
+                        <td>@product.Id</td>
+                        <td>@product.Name</td>
+                        <td>@product.Price</td>
+                        <td>@product.Description</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-warning" role="alert">
+            Nessun prodotto trovato.
+        </div>
+    }
+</div>
