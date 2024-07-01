@@ -9,13 +9,13 @@ namespace quintogiorno.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, IProductRepository productRepository)
+        public HomeController(ILogger<HomeController> logger, IProductService productRepository)
         {
             _logger = logger;
             _productRepository = productRepository;
         }
 
-        private readonly IProductRepository _productRepository;
+        private readonly IProductService _productRepository;
 
         
 

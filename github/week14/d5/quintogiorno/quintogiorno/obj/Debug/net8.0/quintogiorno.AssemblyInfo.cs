@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("quintogiorno")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2ef65d102ab3061245fba6825d923740a69303e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47c8d735cf2e761150a4b313e2d4b2623c71dbbd")]
 [assembly: System.Reflection.AssemblyProductAttribute("quintogiorno")]
 [assembly: System.Reflection.AssemblyTitleAttribute("quintogiorno")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

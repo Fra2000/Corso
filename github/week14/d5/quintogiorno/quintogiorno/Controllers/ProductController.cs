@@ -7,9 +7,9 @@ namespace quintogiorno.Controllers
 
         public class ProductController : Controller
         {
-            private readonly IProductRepository _productRepository;
+            private readonly IProductService _productRepository;
 
-            public ProductController(IProductRepository productRepository)
+            public ProductController(IProductService productRepository)
             {
                 _productRepository = productRepository;
             }

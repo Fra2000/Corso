@@ -15,6 +15,8 @@
                     <th>Nome</th>
                     <th>Prezzo</th>
                     <th>Descrizione</th>
+                    <th>Immagine</th>
+                    <th>Ulteriori informazioni</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,8 +25,14 @@
                     <tr class="text-white">
                         <td>@product.Id</td>
                         <td>@product.Name</td>
-                        <td>@product.Price</td>
+                        <td>@product.Price.ToString("C")</td>
                         <td>@product.Description</td>
+                        <td>
+                            <img src="@product.ImagePath" alt="@product.Name" style="width: 100px; height: auto;" />
+                        </td>
+                        <td>
+                            <a class="btn btn-info" asp-controller="Details" asp-action="Index" asp-route-id="@product.Id">Vedi dettagli</a>
+                        </td>
                     </tr>
                 }
             </tbody>

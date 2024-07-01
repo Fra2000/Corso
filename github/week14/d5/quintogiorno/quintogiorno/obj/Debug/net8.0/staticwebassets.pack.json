@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\fra00\\OneDrive\\Documenti\\Programmazione\\Corso\\github\\week14\\d5\\quintogiorno\\quintogiorno\\wwwroot\\images\\1.jpeg",
+      "PackagePath": "staticwebassets\\images\\1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\fra00\\OneDrive\\Documenti\\Programmazione\\Corso\\github\\week14\\d5\\quintogiorno\\quintogiorno\\wwwroot\\images\\2.jpeg",
+      "PackagePath": "staticwebassets\\images\\2.jpeg"
+    },
+    {
       "Id": "C:\\Users\\fra00\\OneDrive\\Documenti\\Programmazione\\Corso\\github\\week14\\d5\\quintogiorno\\quintogiorno\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

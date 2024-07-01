@@ -1,0 +1,40 @@
+﻿@model quintogiorno.Models.Product
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<div class="container mt-5 p-5 border border-white border-3">
+    <h2 class="mb-4 text-center">Dettagli del Prodotto</h2>
+
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr class="text-white">
+                <th>Campo</th>
+                <th>Valore</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-white">
+                <th>ID</th>
+                <td>@Model.Id</td>
+            </tr>
+            <tr class="text-white">
+                <th>Nome</th>
+                <td>@Model.Name</td>
+            </tr>
+            <tr class="text-white">
+                <th>Prezzo</th>
+                <td>@Model.Price.ToString("C")</td>
+            </tr>
+            <tr class="text-white">
+                <th>Descrizione</th>
+                <td>@Model.Description</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="text-center mt-4">
+        <a class="btn btn-info" href="/Home/Index">Torna alla Home</a>
+    </div>
+</div>
