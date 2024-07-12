@@ -1,0 +1,262 @@
+﻿html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body,
+.offcanvas-body,
+#cartOffcanvas {
+    margin-bottom: 20px;
+    height: 100%;
+    background: rgb(88, 89, 94);
+    background: linear-gradient(180deg, rgba(88, 89, 94, 1) 40%, rgba(32, 33, 32, 1) 81%);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+a {
+    text-decoration: none
+}
+
+/***********************************************Admin******************************************************/
+.tabBg {
+    background-color: #2F4F4F;
+}
+
+
+#header-company {
+ 
+    color: #FF4500;
+    
+    
+}
+
+
+.btnOroange {
+    background-color: #FF4500;
+    /* Colore della navbar */
+    color: #FFF;
+    border-color: #FF4500;
+}
+
+.btnOroange:hover {
+    background-color: #FF6600;
+    /* Colore hover della navbar */
+    color: #FFF;
+    border-color: #FF6600;
+}
+
+.btn-dark {
+    background-color: black;
+    /* Grigio Scuro della navbar */
+    color: #FFF;
+    border-color: #2F4F4F;
+}
+
+.btn-dark:hover {
+    background-color: #555555;
+    /* Colore hover scuro */
+    color: #FFF;
+    border-color: #555555;
+}
+
+/***********************************************************Navbar**********************************************************************/
+/* Aggiunge lo scroll verticale */
+/*background navbar*/
+.nav-bg-personal {
+    background-color: #2F4F4F !important;
+    /*magari un gradient*/
+}
+
+
+/*input cerca navbar*/
+.nav-personal-search-input {
+    color: #FF4500 !important;
+    border-color: #FF4500 !important;
+    border-radius: 12px !important;
+    background-color: #2F4F4F;
+    /* Background color with 30% opacity */
+    transition: background-color 0.3s ease;
+    /* Smooth transition */
+}
+
+.nav-personal-search-input:focus {
+    color: #FF4500 !important;
+    background-color: #2F4F4F !important;
+    border-color: #2F4F4F !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 102, 0, 0.25) !important;
+}
+
+.nav-personal-search-input::placeholder {
+    color: #FF4500 !important;
+}
+
+
+/* svuota search bar button */
+.nav-personal-search-input::-webkit-search-cancel-button {
+    appearance: none;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: #FF4500;
+    /* Desired color for the cross */
+    color: white;
+    /* Text color (if any) */
+    font-size: 1.2em;
+    /* Adjust as needed */
+    border: none;
+    /* Remove any default border */
+    cursor: pointer;
+    /* Show pointer cursor */
+    mask-image: url('data:image/svg+xml,\
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18px" height="18px">\
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>\
+        </svg>');
+    -webkit-mask-image: url('data:image/svg+xml,\
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18px" height="18px">\
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>\
+        </svg>');
+    -webkit-mask-size: 18px 18px;
+    mask-size: 18px 18px;
+}
+
+/*bottone cerca navbar*/
+.nav-btn-search {
+    color: #FF4500 !important;
+    border-color: #FF4500 !important;
+    border-radius: 12px !important;
+    padding: 3px 20px !important;
+    width: auto !important;
+    background-color: rgba(255, 69, 0, 0.15);
+    /* Lighter background color with 15% opacity */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Smooth transition */
+}
+
+.nav-btn-search:hover {
+    color: #FFF !important;
+    background-color: #FF6600 !important;
+    border-color: #FF6600 !important;
+}
+
+.nav-btn-search:active {
+    color: #FFF !important;
+    background-color: #1467B6 !important;
+    border-color: #1467B6 !important;
+}
+
+
+
+/*scritte navbar*/
+.nav-item>a,
+.nav-cart,
+.footer_text {
+    color: #FF4500 !important;
+}
+
+/*tasto hamburger navbar*/
+.navbar-toggler-icon {
+    color: #FF4500 !important;
+    /*colore lineette hamburger */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(255, 102, 0, 1);
+    /* colore bordo tasto hamburger */
+}
+
+/*bordo footer*/
+.footer {
+    background-color: #2F4F4F;
+    z-index: 4000;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+/* dropdown filter sull'index */
+
+/* Bottoni personalizzati */
+.btn-custom-primary {
+    background-color: #2F4F4F;
+    /* Grigio Scuro */
+    color: #FF4500;
+    /* Rosso Arancio */
+    border-color: #FF4500;
+    /* Rosso Arancio */
+}
+
+.btn-custom-primary:hover {
+    background-color: #FF4500;
+    /* Rosso Arancio */
+    color: #FFF;
+    /* Bianco */
+    border-color: #FF4500;
+    /* Rosso Arancio */
+}
+
+.btn-custom-secondary {
+    background-color: #FF4500;
+    /* Rosso Arancio */
+    color: #2F4F4F;
+    /* Grigio Scuro */
+    border-color: #2F4F4F;
+    /* Grigio Scuro */
+}
+
+.btn-custom-secondary:hover {
+    background-color: #2F4F4F;
+    /* Grigio Scuro */
+    color: #FFF;
+    /* Bianco */
+    border-color: #2F4F4F;
+    /* Grigio Scuro */
+}
+
+.product-card {
+    border: 1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+    padding: 15px;
+    /* Aggiungi padding per migliorare gli spazi */
+}
+
+.product-image {
+    max-width: 100%;
+    height: 300px;
+    /* Aumenta ulteriormente l'altezza delle immagini */
+    object-fit: contain;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+#cartButton {
+    top: 140px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    z-index: 1030; /* Ensure it stays above other elements */
+}
+
+/******************************** DELETE******************************************************/
+
+.bgcard {
+    background-color: #2F4F4F !important;
+}

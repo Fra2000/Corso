@@ -1,0 +1,95 @@
+﻿/* Cart Heading */
+.cart-heading {
+    color: #DDDDDD; /* Slightly lighter than #CCCCCC */
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Cart Table */
+.cart-container .table {
+    background-color: #303030; /* Slightly lighter than #262626 */
+}
+
+    .cart-container .table th,
+    .cart-container .table td {
+        border-color: #DDDDDD; /* Lightened from #CCCCCC */
+        color: #EEEEEE; /* Lightened from #E6E6E6 */
+    }
+
+    .cart-container .table th {
+        background-color: #444444; /* Slightly lighter than #3F3F3F */
+    }
+
+.cart-container .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #3A3A3A; /* Slightly lighter than #333333 */
+}
+
+.cart-container .table-hover tbody tr:hover {
+    background-color: #5A5A5A; /* Slightly lighter than #555555 */
+}
+
+/* Cart Buttons */
+.cart-container .btn-warning {
+    background-color: #FF4500; /* Lightened and shifted from #FF6600 */
+    border-color: #FF7F00; /* Lightened and shifted from #FF6600 */
+    color: white; /* Darkened from #000000 */
+}
+
+.cart-container .btn-danger {
+    background-color: #4C4C4C; /* Lightened from #333333 */
+    border-color: #4C4C4C; /* Lightened from #333333 */
+    color: white; /* Lightened from #CCCCCC */
+}
+
+    .cart-container .btn-danger:hover,
+    .cart-container .btn-warning:hover {
+        color: white; /* Lightened from #CCCCCC */
+        background-color:hsl(24, 100%, 60%); /* Lightened and shifted from #FF6600 */
+        border-color: #FF7F00; /* Lightened and shifted from #FF6600 */
+    }
+
+/* Cart Message */
+.cart-message {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+/* Cart Form */
+.cart-container form {
+    text-align: center;
+}
+
+/* Total Container */
+.cart-container .total-container {
+    background-color: #444444; /* Slightly lighter than #3F3F3F */
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.cart-container .total-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #FF7F00; /* Lightened and shifted from #FF4500 */
+}
+
+/* Description Table Cell */
+.desc_td {
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+    text-overflow: ellipsis; /* Use text-overflow to automatically add ellipsis */
+}
+
+.breaker {
+    width: 300px;
+}
+
+
+.quantity-selector {
+    width: auto; /* or specify a specific width, e.g., width: 60px; */
+    min-width: 60px; /* minimum width to ensure readability */
+    max-width: 80px; /* maximum width to ensure it doesn't stretch too much */
+}
+

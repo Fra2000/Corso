@@ -1,0 +1,24 @@
+﻿body {
+}
+
+.file-input-container {
+    position: relative;
+    display: inline-block;
+}
+
+.file-input {
+    display: none;
+}
+
+.custom-file-label {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.file-name {
+    margin-left: 10px;
+    font-size: 0.9em;
+}
