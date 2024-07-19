@@ -1,0 +1,33 @@
+﻿@model IEnumerable<quintogiorno.Models.TipoViolazione>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>IDViolazione</th>
+            <th>Descrizione</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IDViolazione</td>
+                <td>@item.Descrizione</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IDViolazione">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IDViolazione">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

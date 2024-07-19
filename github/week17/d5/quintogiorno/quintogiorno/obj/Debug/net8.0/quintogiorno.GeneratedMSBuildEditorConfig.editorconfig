@@ -1,0 +1,115 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = quintogiorno
+build_property.RootNamespace = quintogiorno
+build_property.ProjectDir = C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week17\d5\quintogiorno\quintogiorno\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\fra00\OneDrive\Documenti\Programmazione\Corso\github\week17\d5\quintogiorno\quintogiorno
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/Anagrafica/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5hZ3JhZmljYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/Anagrafica/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5hZ3JhZmljYVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/Anagrafica/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5hZ3JhZmljYVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/Anagrafica/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5hZ3JhZmljYVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/Anagrafica/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5hZ3JhZmljYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/Report/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/Report/TotalPuntiDecurtatiPerTrasgressore.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFRvdGFsUHVudGlEZWN1cnRhdGlQZXJUcmFzZ3Jlc3NvcmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/Report/TotalVerbaliPerTrasgressore.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFRvdGFsVmVyYmFsaVBlclRyYXNncmVzc29yZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/Report/ViolazioniImportoMaggioreDiQuattrocento.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFZpb2xhemlvbmlJbXBvcnRvTWFnZ2lvcmVEaVF1YXR0cm9jZW50by5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/Report/ViolazioniOltreDieciPunti.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFZpb2xhemlvbmlPbHRyZURpZWNpUHVudGkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/TipoViolazione/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1Zpb2xhemlvbmVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/TipoViolazione/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1Zpb2xhemlvbmVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/TipoViolazione/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1Zpb2xhemlvbmVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/TipoViolazione/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1Zpb2xhemlvbmVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/Verbale/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVyYmFsZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/Verbale/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVyYmFsZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/Verbale/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVyYmFsZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/fra00/OneDrive/Documenti/Programmazione/Corso/github/week17/d5/quintogiorno/quintogiorno/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-turic5vpwx

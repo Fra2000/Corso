@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Home Page</h1>
+
+<div>
+    <h2>Benvenuto!</h2>
+    <p>Seleziona una sezione per iniziare:</p>
+    <ul>
+        <li><a href="@Url.Action("Anagrafica", "Home")">Anagrafica Trasgressori</a></li>
+        <li><a href="@Url.Action("TipoViolazione", "Home")">Tipi di Violazione</a></li>
+        <li><a href="@Url.Action("Verbale", "Home")">Compilazione Verbale</a></li>
+    </ul>
+</div>
