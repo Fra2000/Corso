@@ -1,0 +1,344 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestione Prenotazioni</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Gestione Prenotazioni</h1>
+
+    <!-- Modulo per creare una nuova prenotazione -->
+    <div id="createForm">
+        <h2>Crea Nuova Prenotazione</h2>
+        <form id="createPrenotazioneForm">
+            <!-- Selezione del cliente -->
+            <label for="clienteId">Cliente:</label>
+            <select id="clienteId" name="clienteId" required>
+                <!-- Le opzioni saranno caricate dinamicamente -->
+            </select><br />
+
+            <!-- Selezione della camera -->
+            <label for="cameraId">Camera:</label>
+            <select id="cameraId" name="cameraId" required>
+                <!-- Le opzioni saranno caricate dinamicamente -->
+            </select><br />
+
+            <label for="createDataPrenotazione">Data Prenotazione:</label>
+            <input type="date" id="createDataPrenotazione" name="dataPrenotazione" required /><br />
+            <label for="createDataInizio">Data Inizio:</label>
+            <input type="date" id="createDataInizio" name="dataInizio" required /><br />
+            <label for="createDataFine">Data Fine:</label>
+            <input type="date" id="createDataFine" name="dataFine" required /><br />
+            <label for="createCaparra">Caparra:</label>
+            <input type="number" step="0.01" id="createCaparra" name="caparra" required /><br />
+            <label for="createTariffa">Tariffa:</label>
+            <input type="number" step="0.01" id="createTariffa" name="tariffa" required /><br />
+            <label for="createServizioCamera">Servizio Camera:</label>
+            <select id="createServizioCamera" name="servizioCamera" required>
+                <option value="pernottamento con prima colazione">Pernottamento con prima colazione</option>
+                <option value="pensione completa">Pensione completa</option>
+                <option value="mezza pensione">Mezza pensione</option>
+            </select><br />
+            <button type="submit">Crea</button>
+        </form>
+    </div>
+
+    <table id="prenotazioniTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Data Prenotazione</th>
+                <th>Periodo</th>
+                <th>Caparra</th>
+                <th>Tariffa</th>
+                <th>Servizio Camera</th>
+                <th>Azioni</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <h2>Crea Cliente e Camera</h2>
+    <form id="createClienteCameraForm">
+        <!-- Campi per il Cliente -->
+        <fieldset>
+            <legend>Informazioni Cliente</legend>
+            <input type="text" name="codiceFiscale" placeholder="Codice Fiscale" required>
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="text" name="cognome" placeholder="Cognome" required>
+            <input type="text" name="citta" placeholder="Città" required>
+            <input type="text" name="provincia" placeholder="Provincia" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="telefono" placeholder="Telefono" required>
+            <input type="text" name="cellulare" placeholder="Cellulare" required>
+        </fieldset>
+
+        <!-- Campi per la Camera -->
+        <fieldset>
+            <legend>Informazioni Camera</legend>
+            <input type="number" name="numeroCamera" placeholder="Numero Camera" required>
+            <input type="text" name="descrizione" placeholder="Descrizione">
+            <select name="tipologia" required>
+                <option value="">Seleziona Tipologia</option>
+                <option value="singola">Singola</option>
+                <option value="doppia">Doppia</option>
+            </select>
+        </fieldset>
+
+        <button type="submit">Crea</button>
+    </form>
+
+
+    <!-- Modulo per aggiornare una prenotazione -->
+    <div id="updateForm" style="display: none;">
+        <h2>Aggiorna Prenotazione</h2>
+        <form id="updatePrenotazioneForm">
+            <input type="hidden" id="updateId" name="id" />
+            <label for="updateDataPrenotazione">Data Prenotazione:</label>
+            <input type="date" id="updateDataPrenotazione" name="dataPrenotazione" required /><br />
+            <label for="updateDataInizio">Data Inizio:</label>
+            <input type="date" id="updateDataInizio" name="dataInizio" required /><br />
+            <label for="updateDataFine">Data Fine:</label>
+            <input type="date" id="updateDataFine" name="dataFine" required /><br />
+            <label for="updateCaparra">Caparra:</label>
+            <input type="number" step="0.01" id="updateCaparra" name="caparra" required /><br />
+            <label for="updateTariffa">Tariffa:</label>
+            <input type="number" step="0.01" id="updateTariffa" name="tariffa" required /><br />
+            <label for="updateServizioCamera">Servizio Camera:</label>
+            <select id="updateServizioCamera" name="servizioCamera" required>
+                <option value="pernottamento con prima colazione">Pernottamento con prima colazione</option>
+                <option value="pensione completa">Pensione completa</option>
+                <option value="mezza pensione">Mezza pensione</option>
+            </select><br />
+            <button type="submit">Aggiorna</button>
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            const token = localStorage.getItem('jwtToken');  // Assuming you have saved the token in local storage
+
+            function fetchPrenotazioni() {
+                $.ajax({
+                    url: '/api/Prenotazioni',
+                    type: 'GET',
+                    headers: {
+                        'Authorization': 'Bearer ' + token
+                    },
+                    success: function (data) {
+                        var tableBody = $('#prenotazioniTable tbody');
+                        tableBody.empty();
+                        data.forEach(function (prenotazione) {
+                            tableBody.append(`
+                                <tr>
+                                    <td>${prenotazione.id}</td>
+                                    <td>${new Date(prenotazione.dataPrenotazione).toLocaleDateString()}</td>
+                                    <td>${new Date(prenotazione.dataInizio).toLocaleDateString()} - ${new Date(prenotazione.dataFine).toLocaleDateString()}</td>
+                                    <td>${prenotazione.caparra}</td>
+                                    <td>${prenotazione.tariffa}</td>
+                                    <td>${prenotazione.servizioCamera}</td>
+                                    <td>
+                                        <button onclick="editPrenotazione(${prenotazione.id})">Edit</button>
+                                        <button onclick="deletePrenotazione(${prenotazione.id})">Delete</button>
+                                        <button onclick="checkoutPrenotazione(${prenotazione.id})">Checkout</button>
+                                    </td>
+                                </tr>
+                            `);
+                        });
+                    },
+                    error: function (error) {
+                        console.error('Error fetching prenotazioni:', error);
+                    }
+                });
+            }
+
+            fetchPrenotazioni();
+
+            window.deletePrenotazione = function (id) {
+                $.ajax({
+                    url: '/api/Prenotazioni/' + id,
+                    type: 'DELETE',
+                    headers: {
+                        'Authorization': 'Bearer ' + token
+                    },
+                    success: function () {
+                        fetchPrenotazioni();
+                    },
+                    error: function (error) {
+                        console.error('Error deleting prenotazione:', error);
+                    }
+                });
+            };
+
+            window.editPrenotazione = function (id) {
+                $.ajax({
+                    url: '/api/Prenotazioni/' + id,
+                    type: 'GET',
+                    headers: {
+                        'Authorization': 'Bearer ' + token
+                    },
+                    success: function (prenotazione) {
+                        $('#updateId').val(prenotazione.id);
+                        $('#updateDataPrenotazione').val(new Date(prenotazione.dataPrenotazione).toISOString().split('T')[0]);
+                        $('#updateDataInizio').val(new Date(prenotazione.dataInizio).toISOString().split('T')[0]);
+                        $('#updateDataFine').val(new Date(prenotazione.dataFine).toISOString().split('T')[0]);
+                        $('#updateCaparra').val(prenotazione.caparra);
+                        $('#updateTariffa').val(prenotazione.tariffa);
+                        $('#updateServizioCamera').val(prenotazione.servizioCamera);
+                        $('#updateForm').show();
+                    },
+                    error: function (error) {
+                        console.error('Error fetching prenotazione for editing:', error);
+                    }
+                });
+            };
+
+            window.checkoutPrenotazione = function (id) {
+                $.ajax({
+                    url: '/api/Prenotazioni/' + id + '/checkout',
+                    type: 'GET',
+                    headers: {
+                        'Authorization': 'Bearer ' + token
+                    },
+                    success: function (data) {
+                        localStorage.setItem('checkoutDetails', JSON.stringify(data));
+                        window.location.href = '/Home/Checkout';
+                    },
+                    error: function (error) {
+                        console.error('Error fetching checkout details:', error);
+                    }
+                });
+            };
+
+            $('#createPrenotazioneForm').submit(function (e) {
+                e.preventDefault();
+                var prenotazione = {
+                    DataPrenotazione: $('#createDataPrenotazione').val(),
+                    DataInizio: $('#createDataInizio').val(),
+                    DataFine: $('#createDataFine').val(),
+                    Caparra: $('#createCaparra').val(),
+                    Tariffa: $('#createTariffa').val(),
+                    ServizioCamera: $('#createServizioCamera').val()
+                };
+                $.ajax({
+                    url: '/api/Prenotazioni',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    headers: {
+                        'Authorization': 'Bearer ' + token
+                    },
+                    data: JSON.stringify(prenotazione),
+                    success: function () {
+                        fetchPrenotazioni();
+                        $('#createPrenotazioneForm')[0].reset();
+                    },
+                    error: function (error) {
+                        console.error('Error creating prenotazione:', error);
+                    }
+                });
+            });
+
+            $('#updatePrenotazioneForm').submit(function (e) {
+                e.preventDefault();
+                var id = $('#updateId').val();
+                var prenotazione = {
+                    ID: id,
+                    DataPrenotazione: $('#updateDataPrenotazione').val(),
+                    DataInizio: $('#updateDataInizio').val(),
+                    DataFine: $('#updateDataFine').val(),
+                    Caparra: $('#updateCaparra').val(),
+                    Tariffa: $('#updateTariffa').val(),
+                    ServizioCamera: $('#updateServizioCamera').val()
+                };
+                $.ajax({
+                    url: '/api/Prenotazioni/' + id,
+                    type: 'PUT',
+                    contentType: 'application/json',
+                    headers: {
+                        'Authorization': 'Bearer ' + token
+                    },
+                    data: JSON.stringify(prenotazione),
+                    success: function () {
+                        fetchPrenotazioni();
+                        $('#updateForm').hide();
+                    },
+                    error: function (error) {
+                        console.error('Error updating prenotazione:', error);
+                    }
+                });
+            });
+
+            // Caricamento dei clienti
+            $.ajax({
+                url: '/api/Clienti',  // Assicurati che l'endpoint esista e sia corretto
+                type: 'GET',
+                success: function (clienti) {
+                    var clienteSelect = $('#clienteId');
+                    clienti.forEach(function (cliente) {
+                        clienteSelect.append(`<option value="${cliente.id}">${cliente.nome} ${cliente.cognome}</option>`);
+                    });
+                },
+                error: function () {
+                    console.error('Errore nel caricamento dei clienti');
+                }
+            });
+
+            // Caricamento delle camere
+            $.ajax({
+                url: '/api/Camere',  // Assicurati che l'endpoint esista e sia corretto
+                type: 'GET',
+                success: function (camere) {
+                    var cameraSelect = $('#cameraId');
+                    camere.forEach(function (camera) {
+                        cameraSelect.append(`<option value="${camera.id}">${camera.numeroCamera} - ${camera.descrizione}</option>`);
+                    });
+                },
+                error: function () {
+                    console.error('Errore nel caricamento delle camere');
+                }
+            });
+
+            $('#createClienteCameraForm').submit(function (event) {
+                event.preventDefault();
+
+                var clienteData = {
+                    CodiceFiscale: $('input[name="codiceFiscale"]').val(),
+                    Nome: $('input[name="nome"]').val(),
+                    Cognome: $('input[name="cognome"]').val(),
+                    Citta: $('input[name="citta"]').val(),
+                    Provincia: $('input[name="provincia"]').val(),
+                    Email: $('input[name="email"]').val(),
+                    Telefono: $('input[name="telefono"]').val(),
+                    Cellulare: $('input[name="cellulare"]').val()
+                };
+
+                var cameraData = {
+                    NumeroCamera: $('input[name="numeroCamera"]').val(),
+                    Descrizione: $('input[name="descrizione"]').val(),
+                    Tipologia: $('select[name="tipologia"]').val()
+                };
+
+                $.ajax({
+                    url: 'https://localhost:7153/api/ClienteCamera/CreateClienteCamera',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ Cliente: clienteData, Camera: cameraData }),
+                    success: function (response) {
+                        alert('Cliente e Camera creati con successo!');
+                        // Aggiorna i menu a tendina o gestisci la logica post-creazione
+                    },
+                    error: function () {
+                        alert('Errore nella creazione di Cliente e Camera');
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Dettagli Checkout</h1>
+    <div id="checkoutDetails"></div>
+
+    <script>
+        $(document).ready(function () {
+            var checkoutDetails = JSON.parse(localStorage.getItem('checkoutDetails'));
+            if (checkoutDetails) {
+                var html = `
+                        <p><strong>Numero Camera:</strong> ${checkoutDetails.NumeroCamera}</p>
+                        <p><strong>Periodo:</strong> ${checkoutDetails.Periodo}</p>
+                        <p><strong>Tariffa:</strong> ${checkoutDetails.Tariffa}</p>
+                        <p><strong>Importo da Saldare:</strong> ${checkoutDetails.ImportoDaSaldare}</p>
+                        <h3>Servizi Aggiuntivi:</h3>
+                        <ul>
+                    `;
+                checkoutDetails.ServiziAggiuntivi.forEach(function (servizio) {
+                    html += `<li>${servizio.Tipologia} - Quantità: ${servizio.Quantita}, Prezzo: ${servizio.Prezzo}</li>`;
+                });
+                html += `</ul>`;
+                $('#checkoutDetails').html(html);
+            } else {
+                $('#checkoutDetails').html('<p>Nessun dettaglio disponibile</p>');
+            }
+        });
+    </script>
+</body>
+</html>
