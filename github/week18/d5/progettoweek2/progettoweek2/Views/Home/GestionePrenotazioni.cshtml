@@ -7,111 +7,186 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestione Prenotazioni</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body>
-    <h1>Gestione Prenotazioni</h1>
+<body class="bg-light">
+    <div class="container">
+        <h1 class="my-4 text-center">Gestione Prenotazioni</h1>
 
-    <!-- Modulo per creare una nuova prenotazione -->
-    <div id="createForm">
-        <h2>Crea Nuova Prenotazione</h2>
-        <form id="createPrenotazioneForm">
-            <!-- Selezione del cliente -->
-            <label for="clienteId">Cliente:</label>
-            <select id="clienteId" name="clienteId" required>
-                <!-- Le opzioni saranno caricate dinamicamente -->
-            </select><br />
+        <!-- Form per creare un nuovo cliente -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>Crea Cliente</h2>
+            </div>
+            <div class="card-body">
+                <form id="createClienteForm">
+                    <div class="form-group">
+                        <input type="text" name="codiceFiscale" placeholder="Codice Fiscale" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="nome" placeholder="Nome" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="cognome" placeholder="Cognome" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="citta" placeholder="Città" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="provincia" placeholder="Provincia" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="telefono" placeholder="Telefono" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="cellulare" placeholder="Cellulare" class="form-control" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Crea Cliente</button>
+                </form>
+            </div>
+        </div>
 
-            <!-- Selezione della camera -->
-            <label for="cameraId">Camera:</label>
-            <select id="cameraId" name="cameraId" required>
-                <!-- Le opzioni saranno caricate dinamicamente -->
-            </select><br />
+        <!-- Form per creare una nuova camera -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>Crea Camera</h2>
+            </div>
+            <div class="card-body">
+                <form id="createCameraForm">
+                    <div class="form-group">
+                        <input type="number" name="numeroCamera" placeholder="Numero Camera" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="descrizione" placeholder="Descrizione" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <select name="tipologia" class="form-control" required>
+                            <option value="">Seleziona Tipologia</option>
+                            <option value="singola">Singola</option>
+                            <option value="doppia">Doppia</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Crea Camera</button>
+                </form>
+            </div>
+        </div>
 
-            <label for="createDataPrenotazione">Data Prenotazione:</label>
-            <input type="date" id="createDataPrenotazione" name="dataPrenotazione" required /><br />
-            <label for="createDataInizio">Data Inizio:</label>
-            <input type="date" id="createDataInizio" name="dataInizio" required /><br />
-            <label for="createDataFine">Data Fine:</label>
-            <input type="date" id="createDataFine" name="dataFine" required /><br />
-            <label for="createCaparra">Caparra:</label>
-            <input type="number" step="0.01" id="createCaparra" name="caparra" required /><br />
-            <label for="createTariffa">Tariffa:</label>
-            <input type="number" step="0.01" id="createTariffa" name="tariffa" required /><br />
-            <label for="createServizioCamera">Servizio Camera:</label>
-            <select id="createServizioCamera" name="servizioCamera" required>
-                <option value="pernottamento con prima colazione">Pernottamento con prima colazione</option>
-                <option value="pensione completa">Pensione completa</option>
-                <option value="mezza pensione">Mezza pensione</option>
-            </select><br />
-            <button type="submit">Crea</button>
-        </form>
-    </div>
+        <!-- Modulo per creare una nuova prenotazione -->
+        <div id="createForm" class="card mb-4">
+            <div class="card-header">
+                <h2>Crea Nuova Prenotazione</h2>
+            </div>
+            <div class="card-body">
+                <form id="createPrenotazioneForm">
+                    <!-- Selezione del cliente -->
+                    <div class="form-group">
+                        <label for="clienteId">Cliente:</label>
+                        <select id="clienteId" name="clienteId" class="form-control" required>
+                            <!-- Le opzioni saranno caricate dinamicamente -->
+                        </select>
+                    </div>
 
-    <table id="prenotazioniTable">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Data Prenotazione</th>
-                <th>Periodo</th>
-                <th>Caparra</th>
-                <th>Tariffa</th>
-                <th>Servizio Camera</th>
-                <th>Azioni</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
+                    <!-- Selezione della camera -->
+                    <div class="form-group">
+                        <label for="cameraId">Camera:</label>
+                        <select id="cameraId" name="cameraId" class="form-control" required>
+                            <!-- Le opzioni saranno caricate dinamicamente -->
+                        </select>
+                    </div>
 
-    <h2>Crea Cliente</h2>
-    <form id="createClienteForm">
-        <input type="text" name="codiceFiscale" placeholder="Codice Fiscale" required><br />
-        <input type="text" name="nome" placeholder="Nome" required><br />
-        <input type="text" name="cognome" placeholder="Cognome" required><br />
-        <input type="text" name="citta" placeholder="Città" required><br />
-        <input type="text" name="provincia" placeholder="Provincia" required><br />
-        <input type="email" name="email" placeholder="Email" required><br />
-        <input type="text" name="telefono" placeholder="Telefono" required><br />
-        <input type="text" name="cellulare" placeholder="Cellulare" required><br />
-        <button type="submit">Crea Cliente</button>
-    </form>
+                    <div class="form-group">
+                        <label for="createDataPrenotazione">Data Prenotazione:</label>
+                        <input type="date" id="createDataPrenotazione" name="dataPrenotazione" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="createDataInizio">Data Inizio:</label>
+                        <input type="date" id="createDataInizio" name="dataInizio" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="createDataFine">Data Fine:</label>
+                        <input type="date" id="createDataFine" name="dataFine" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="createCaparra">Caparra:</label>
+                        <input type="number" step="0.01" id="createCaparra" name="caparra" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="createTariffa">Tariffa:</label>
+                        <input type="number" step="0.01" id="createTariffa" name="tariffa" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="createServizioCamera">Servizio Camera:</label>
+                        <select id="createServizioCamera" name="servizioCamera" class="form-control" required>
+                            <option value="pernottamento con prima colazione">Pernottamento con prima colazione</option>
+                            <option value="pensione completa">Pensione completa</option>
+                            <option value="mezza pensione">Mezza pensione</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Crea</button>
+                </form>
+            </div>
+        </div>
 
-    <h2>Crea Camera</h2>
-    <form id="createCameraForm">
-        <input type="number" name="numeroCamera" placeholder="Numero Camera" required><br />
-        <input type="text" name="descrizione" placeholder="Descrizione"><br />
-        <select name="tipologia" required>
-            <option value="">Seleziona Tipologia</option>
-            <option value="singola">Singola</option>
-            <option value="doppia">Doppia</option>
-        </select><br />
-        <button type="submit">Crea Camera</button>
-    </form>
+        <table id="prenotazioniTable" class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Data Prenotazione</th>
+                    <th>Periodo</th>
+                    <th>Caparra</th>
+                    <th>Tariffa</th>
+                    <th>Servizio Camera</th>
+                    <th>Azioni</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
 
-    <!-- Modulo per aggiornare una prenotazione -->
-    <div id="updateForm" style="display: none;">
-        <h2>Aggiorna Prenotazione</h2>
-        <form id="updatePrenotazioneForm">
-            <input type="hidden" id="updateId" name="id" />
-            <label for="updateDataPrenotazione">Data Prenotazione:</label>
-            <input type="date" id="updateDataPrenotazione" name="dataPrenotazione" required /><br />
-            <label for="updateDataInizio">Data Inizio:</label>
-            <input type="date" id="updateDataInizio" name="dataInizio" required /><br />
-            <label for="updateDataFine">Data Fine:</label>
-            <input type="date" id="updateDataFine" name="dataFine" required /><br />
-            <label for="updateCaparra">Caparra:</label>
-            <input type="number" step="0.01" id="updateCaparra" name="caparra" required /><br />
-            <label for="updateTariffa">Tariffa:</label>
-            <input type="number" step="0.01" id="updateTariffa" name="tariffa" required /><br />
-            <label for="updateServizioCamera">Servizio Camera:</label>
-            <select id="updateServizioCamera" name="servizioCamera" required>
-                <option value="pernottamento con prima colazione">Pernottamento con prima colazione</option>
-                <option value="pensione completa">Pensione completa</option>
-                <option value="mezza pensione">Mezza pensione</option>
-            </select><br />
-            <button type="submit">Aggiorna</button>
-        </form>
+        <!-- Modulo per aggiornare una prenotazione -->
+        <div id="updateForm" class="card mb-4" style="display: none;">
+            <div class="card-header">
+                <h2>Aggiorna Prenotazione</h2>
+            </div>
+            <div class="card-body">
+                <form id="updatePrenotazioneForm">
+                    <input type="hidden" id="updateId" name="id" />
+                    <div class="form-group">
+                        <label for="updateDataPrenotazione">Data Prenotazione:</label>
+                        <input type="date" id="updateDataPrenotazione" name="dataPrenotazione" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="updateDataInizio">Data Inizio:</label>
+                        <input type="date" id="updateDataInizio" name="dataInizio" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="updateDataFine">Data Fine:</label>
+                        <input type="date" id="updateDataFine" name="dataFine" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="updateCaparra">Caparra:</label>
+                        <input type="number" step="0.01" id="updateCaparra" name="caparra" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="updateTariffa">Tariffa:</label>
+                        <input type="number" step="0.01" id="updateTariffa" name="tariffa" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="updateServizioCamera">Servizio Camera:</label>
+                        <select id="updateServizioCamera" name="servizioCamera" class="form-control" required>
+                            <option value="pernottamento con prima colazione">Pernottamento con prima colazione</option>
+                            <option value="pensione completa">Pensione completa</option>
+                            <option value="mezza pensione">Mezza pensione</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Aggiorna</button>
+                </form>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -130,20 +205,20 @@
                         tableBody.empty();
                         data.forEach(function (prenotazione) {
                             tableBody.append(`
-                                    <tr>
-                                        <td>${prenotazione.id}</td>
-                                        <td>${new Date(prenotazione.dataPrenotazione).toLocaleDateString()}</td>
-                                        <td>${new Date(prenotazione.dataInizio).toLocaleDateString()} - ${new Date(prenotazione.dataFine).toLocaleDateString()}</td>
-                                        <td>${prenotazione.caparra}</td>
-                                        <td>${prenotazione.tariffa}</td>
-                                        <td>${prenotazione.servizioCamera}</td>
-                                        <td>
-                                            <button onclick="editPrenotazione(${prenotazione.id})">Edit</button>
-                                            <button onclick="deletePrenotazione(${prenotazione.id})">Delete</button>
-                                            <button onclick="checkoutPrenotazione(${prenotazione.id})">Checkout</button>
-                                        </td>
-                                    </tr>
-                                `);
+                                            <tr>
+                                                <td>${prenotazione.id}</td>
+                                                <td>${new Date(prenotazione.dataPrenotazione).toLocaleDateString()}</td>
+                                                <td>${new Date(prenotazione.dataInizio).toLocaleDateString()} - ${new Date(prenotazione.dataFine).toLocaleDateString()}</td>
+                                                <td>${prenotazione.caparra}</td>
+                                                <td>${prenotazione.tariffa}</td>
+                                                <td>${prenotazione.servizioCamera}</td>
+                                                <td>
+                                                    <button class="btn btn-warning btn-sm" onclick="editPrenotazione(${prenotazione.id})">Edit</button>
+                                                    <button class="btn btn-danger btn-sm" onclick="deletePrenotazione(${prenotazione.id})">Delete</button>
+                                                    <button class="btn btn-success btn-sm" onclick="checkoutPrenotazione(${prenotazione.id})">Checkout</button>
+                                                </td>
+                                            </tr>
+                                        `);
                         });
                     },
                     error: function (error) {

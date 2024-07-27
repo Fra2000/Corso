@@ -6,33 +6,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login and Register</title>
+    <title>Login e Registrazione</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body>
-    <h1>Login</h1>
-    @if (ViewBag.Error != null)
-    {
-        <p style="color: red">@ViewBag.Error</p>
-    }
-    @if (ViewBag.Message != null)
-    {
-        <p style="color: green">@ViewBag.Message</p>
-    }
+<body class="bg-light">
+    <div class="container">
+        <div class="row justify-content-center my-4">
+            <div class="col-md-6">
+                <h1 class="text-center">Login</h1>
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger" role="alert">@ViewBag.Error</div>
+                }
+                @if (ViewBag.Message != null)
+                {
+                    <div class="alert alert-success" role="alert">@ViewBag.Message</div>
+                }
 
-    <form method="post" action="/Home/Login">
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <button type="submit">Login</button>
-    </form>
+                <form method="post" action="/Home/Login" class="card p-4">
+                    <div class="form-group">
+                        <label for="username">Nome utente</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Nome utente" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+            </div>
+        </div>
 
-    <h1>Register</h1>
-    <form method="post" action="/Home/Register">
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <input type="text" name="ruolo" placeholder="Role (e.g., User, Admin)" required>
-        <input type="text" name="nome" placeholder="First Name" required>
-        <input type="text" name="cognome" placeholder="Last Name" required>
-        <button type="submit">Register</button>
-    </form>
+        <div class="row justify-content-center my-4">
+            <div class="col-md-6">
+                <h1 class="text-center">Registrazione</h1>
+                <form method="post" action="/Home/Register" class="card p-4">
+                    <div class="form-group">
+                        <label for="register-username">Nome utente</label>
+                        <input type="text" class="form-control" id="register-username" name="username" placeholder="Nome utente" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <input type="password" class="form-control" id="register-password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Ruolo</label>
+                        <input type="text" class="form-control" id="role" name="ruolo" placeholder="Ruolo (Amministratore, Receptionist o altro)" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="first-name">Nome</label>
+                        <input type="text" class="form-control" id="first-name" name="nome" placeholder="Nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Cognome</label>
+                        <input type="text" class="form-control" id="last-name" name="cognome" placeholder="Cognome" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Registrati</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
