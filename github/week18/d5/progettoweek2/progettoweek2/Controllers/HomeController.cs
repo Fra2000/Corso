@@ -9,13 +9,10 @@ using System.Data.SqlClient;
 public class HomeController : Controller
 {
     private readonly string connectionString;
-    private readonly SymmetricSecurityKey securityKey;
 
     public HomeController(IConfiguration configuration)
     {
         connectionString = configuration.GetConnectionString("DefaultConnection");
-        var secretKey = configuration.GetValue<string>("JwtConfig:SecretKey");
-        securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
     }
 
     public IActionResult Index()
@@ -28,10 +25,7 @@ public class HomeController : Controller
     {
         if (VerifyUser(username, password))
         {
-            var token = GenerateJwtToken(username);
-            ViewBag.Token = token;
-            ViewBag.Username = username;
-            return View("Welcome");
+            return RedirectToAction("GestionePrenotazioni");
         }
 
         ViewBag.Error = "Invalid login credentials";
@@ -110,32 +104,13 @@ public class HomeController : Controller
         }
     }
 
-    private string GenerateJwtToken(string username)
-    {
-        var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
-        var claims = new List<Claim>
-        {
-            new Claim(ClaimTypes.Name, username),
-        };
-
-        var token = new JwtSecurityToken(
-            issuer: "YourIssuer",
-            audience: "YourAudience",
-            claims: claims,
-            expires: DateTime.Now.AddHours(1),
-            signingCredentials: credentials
-        );
-
-        return new JwtSecurityTokenHandler().WriteToken(token);
-    }
     public IActionResult GestionePrenotazioni()
     {
         return View("GestionePrenotazioni");
     }
+
     public IActionResult Checkout()
     {
         return View();
     }
-
 }

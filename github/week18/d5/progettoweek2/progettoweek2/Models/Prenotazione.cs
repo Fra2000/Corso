@@ -11,6 +11,9 @@
         public decimal Caparra { get; set; }
         public decimal Tariffa { get; set; }
         public string ServizioCamera { get; set; }
+       
+        
+       
 
     }
 }

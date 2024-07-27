@@ -63,36 +63,31 @@
         <tbody>
         </tbody>
     </table>
-    <h2>Crea Cliente e Camera</h2>
-    <form id="createClienteCameraForm">
-        <!-- Campi per il Cliente -->
-        <fieldset>
-            <legend>Informazioni Cliente</legend>
-            <input type="text" name="codiceFiscale" placeholder="Codice Fiscale" required>
-            <input type="text" name="nome" placeholder="Nome" required>
-            <input type="text" name="cognome" placeholder="Cognome" required>
-            <input type="text" name="citta" placeholder="Città" required>
-            <input type="text" name="provincia" placeholder="Provincia" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="text" name="telefono" placeholder="Telefono" required>
-            <input type="text" name="cellulare" placeholder="Cellulare" required>
-        </fieldset>
 
-        <!-- Campi per la Camera -->
-        <fieldset>
-            <legend>Informazioni Camera</legend>
-            <input type="number" name="numeroCamera" placeholder="Numero Camera" required>
-            <input type="text" name="descrizione" placeholder="Descrizione">
-            <select name="tipologia" required>
-                <option value="">Seleziona Tipologia</option>
-                <option value="singola">Singola</option>
-                <option value="doppia">Doppia</option>
-            </select>
-        </fieldset>
-
-        <button type="submit">Crea</button>
+    <h2>Crea Cliente</h2>
+    <form id="createClienteForm">
+        <input type="text" name="codiceFiscale" placeholder="Codice Fiscale" required><br />
+        <input type="text" name="nome" placeholder="Nome" required><br />
+        <input type="text" name="cognome" placeholder="Cognome" required><br />
+        <input type="text" name="citta" placeholder="Città" required><br />
+        <input type="text" name="provincia" placeholder="Provincia" required><br />
+        <input type="email" name="email" placeholder="Email" required><br />
+        <input type="text" name="telefono" placeholder="Telefono" required><br />
+        <input type="text" name="cellulare" placeholder="Cellulare" required><br />
+        <button type="submit">Crea Cliente</button>
     </form>
 
+    <h2>Crea Camera</h2>
+    <form id="createCameraForm">
+        <input type="number" name="numeroCamera" placeholder="Numero Camera" required><br />
+        <input type="text" name="descrizione" placeholder="Descrizione"><br />
+        <select name="tipologia" required>
+            <option value="">Seleziona Tipologia</option>
+            <option value="singola">Singola</option>
+            <option value="doppia">Doppia</option>
+        </select><br />
+        <button type="submit">Crea Camera</button>
+    </form>
 
     <!-- Modulo per aggiornare una prenotazione -->
     <div id="updateForm" style="display: none;">
@@ -135,20 +130,20 @@
                         tableBody.empty();
                         data.forEach(function (prenotazione) {
                             tableBody.append(`
-                                <tr>
-                                    <td>${prenotazione.id}</td>
-                                    <td>${new Date(prenotazione.dataPrenotazione).toLocaleDateString()}</td>
-                                    <td>${new Date(prenotazione.dataInizio).toLocaleDateString()} - ${new Date(prenotazione.dataFine).toLocaleDateString()}</td>
-                                    <td>${prenotazione.caparra}</td>
-                                    <td>${prenotazione.tariffa}</td>
-                                    <td>${prenotazione.servizioCamera}</td>
-                                    <td>
-                                        <button onclick="editPrenotazione(${prenotazione.id})">Edit</button>
-                                        <button onclick="deletePrenotazione(${prenotazione.id})">Delete</button>
-                                        <button onclick="checkoutPrenotazione(${prenotazione.id})">Checkout</button>
-                                    </td>
-                                </tr>
-                            `);
+                                    <tr>
+                                        <td>${prenotazione.id}</td>
+                                        <td>${new Date(prenotazione.dataPrenotazione).toLocaleDateString()}</td>
+                                        <td>${new Date(prenotazione.dataInizio).toLocaleDateString()} - ${new Date(prenotazione.dataFine).toLocaleDateString()}</td>
+                                        <td>${prenotazione.caparra}</td>
+                                        <td>${prenotazione.tariffa}</td>
+                                        <td>${prenotazione.servizioCamera}</td>
+                                        <td>
+                                            <button onclick="editPrenotazione(${prenotazione.id})">Edit</button>
+                                            <button onclick="deletePrenotazione(${prenotazione.id})">Delete</button>
+                                            <button onclick="checkoutPrenotazione(${prenotazione.id})">Checkout</button>
+                                        </td>
+                                    </tr>
+                                `);
                         });
                     },
                     error: function (error) {
@@ -157,23 +152,7 @@
                 });
             }
 
-            fetchPrenotazioni();
-
-            window.deletePrenotazione = function (id) {
-                $.ajax({
-                    url: '/api/Prenotazioni/' + id,
-                    type: 'DELETE',
-                    headers: {
-                        'Authorization': 'Bearer ' + token
-                    },
-                    success: function () {
-                        fetchPrenotazioni();
-                    },
-                    error: function (error) {
-                        console.error('Error deleting prenotazione:', error);
-                    }
-                });
-            };
+            fetchPrenotazioni();  // Initial call to fetch prenotazioni
 
             window.editPrenotazione = function (id) {
                 $.ajax({
@@ -198,26 +177,29 @@
                 });
             };
 
-            window.checkoutPrenotazione = function (id) {
-                $.ajax({
-                    url: '/api/Prenotazioni/' + id + '/checkout',
-                    type: 'GET',
-                    headers: {
-                        'Authorization': 'Bearer ' + token
-                    },
-                    success: function (data) {
-                        localStorage.setItem('checkoutDetails', JSON.stringify(data));
-                        window.location.href = '/Home/Checkout';
-                    },
-                    error: function (error) {
-                        console.error('Error fetching checkout details:', error);
-                    }
-                });
+            window.deletePrenotazione = function (id) {
+                if (confirm('Sei sicuro di voler eliminare questa prenotazione?')) {
+                    $.ajax({
+                        url: '/api/Prenotazioni/' + id,
+                        type: 'DELETE',
+                        headers: {
+                            'Authorization': 'Bearer ' + token
+                        },
+                        success: function () {
+                            fetchPrenotazioni();
+                        },
+                        error: function (error) {
+                            console.error('Error deleting prenotazione:', error);
+                        }
+                    });
+                }
             };
 
             $('#createPrenotazioneForm').submit(function (e) {
                 e.preventDefault();
                 var prenotazione = {
+                    ClienteID: $('#clienteId').val(),
+                    CameraID: $('#cameraId').val(),
                     DataPrenotazione: $('#createDataPrenotazione').val(),
                     DataInizio: $('#createDataInizio').val(),
                     DataFine: $('#createDataFine').val(),
@@ -225,20 +207,25 @@
                     Tariffa: $('#createTariffa').val(),
                     ServizioCamera: $('#createServizioCamera').val()
                 };
+
+                // Controlla se tutti i campi sono compilati
+                if (!prenotazione.ClienteID || !prenotazione.CameraID || !prenotazione.DataPrenotazione || !prenotazione.DataInizio || !prenotazione.DataFine || !prenotazione.Caparra || !prenotazione.Tariffa || !prenotazione.ServizioCamera) {
+                    alert('Tutti i campi sono richiesti.');
+                    return;
+                }
+
                 $.ajax({
                     url: '/api/Prenotazioni',
                     type: 'POST',
                     contentType: 'application/json',
-                    headers: {
-                        'Authorization': 'Bearer ' + token
-                    },
                     data: JSON.stringify(prenotazione),
                     success: function () {
+                        alert('Prenotazione creata con successo!');
                         fetchPrenotazioni();
                         $('#createPrenotazioneForm')[0].reset();
                     },
-                    error: function (error) {
-                        console.error('Error creating prenotazione:', error);
+                    error: function (xhr) {
+                        alert('Errore nella creazione della prenotazione: ' + xhr.responseText);
                     }
                 });
             });
@@ -273,39 +260,8 @@
                 });
             });
 
-            // Caricamento dei clienti
-            $.ajax({
-                url: '/api/Clienti',  // Assicurati che l'endpoint esista e sia corretto
-                type: 'GET',
-                success: function (clienti) {
-                    var clienteSelect = $('#clienteId');
-                    clienti.forEach(function (cliente) {
-                        clienteSelect.append(`<option value="${cliente.id}">${cliente.nome} ${cliente.cognome}</option>`);
-                    });
-                },
-                error: function () {
-                    console.error('Errore nel caricamento dei clienti');
-                }
-            });
-
-            // Caricamento delle camere
-            $.ajax({
-                url: '/api/Camere',  // Assicurati che l'endpoint esista e sia corretto
-                type: 'GET',
-                success: function (camere) {
-                    var cameraSelect = $('#cameraId');
-                    camere.forEach(function (camera) {
-                        cameraSelect.append(`<option value="${camera.id}">${camera.numeroCamera} - ${camera.descrizione}</option>`);
-                    });
-                },
-                error: function () {
-                    console.error('Errore nel caricamento delle camere');
-                }
-            });
-
-            $('#createClienteCameraForm').submit(function (event) {
+            $('#createClienteForm').submit(function (event) {
                 event.preventDefault();
-
                 var clienteData = {
                     CodiceFiscale: $('input[name="codiceFiscale"]').val(),
                     Nome: $('input[name="nome"]').val(),
@@ -317,6 +273,23 @@
                     Cellulare: $('input[name="cellulare"]').val()
                 };
 
+                $.ajax({
+                    url: 'https://localhost:7153/api/Clienti/Create',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(clienteData),
+                    success: function (response) {
+                        alert('Cliente creato con successo!');
+                        fetchClienti();
+                    },
+                    error: function () {
+                        alert('Errore nella creazione del cliente');
+                    }
+                });
+            });
+
+            $('#createCameraForm').submit(function (event) {
+                event.preventDefault();
                 var cameraData = {
                     NumeroCamera: $('input[name="numeroCamera"]').val(),
                     Descrizione: $('input[name="descrizione"]').val(),
@@ -324,21 +297,58 @@
                 };
 
                 $.ajax({
-                    url: 'https://localhost:7153/api/ClienteCamera/CreateClienteCamera',
+                    url: 'https://localhost:7153/api/Camere/Create',
                     method: 'POST',
                     contentType: 'application/json',
-                    data: JSON.stringify({ Cliente: clienteData, Camera: cameraData }),
+                    data: JSON.stringify(cameraData),
                     success: function (response) {
-                        alert('Cliente e Camera creati con successo!');
-                        // Aggiorna i menu a tendina o gestisci la logica post-creazione
+                        alert('Camera creata con successo!');
+                        fetchCamere();
                     },
                     error: function () {
-                        alert('Errore nella creazione di Cliente e Camera');
+                        alert('Errore nella creazione della camera');
                     }
                 });
             });
-        });
 
+            function fetchClienti() {
+                $.ajax({
+                    url: '/api/Clienti',
+                    type: 'GET',
+                    success: function (clienti) {
+                        var clienteSelect = $('#clienteId');
+                        clienteSelect.empty(); // Svuota le opzioni esistenti
+                        clienti.forEach(function (cliente) {
+                            clienteSelect.append(`<option value="${cliente.id}">${cliente.nome} ${cliente.cognome}</option>`);
+                        });
+                    },
+                    error: function () {
+                        console.error('Errore nel caricamento dei clienti');
+                    }
+                });
+            }
+
+            function fetchCamere() {
+                $.ajax({
+                    url: '/api/Camere',
+                    type: 'GET',
+                    success: function (camere) {
+                        var cameraSelect = $('#cameraId');
+                        cameraSelect.empty(); // Svuota le opzioni esistenti
+                        camere.forEach(function (camera) {
+                            cameraSelect.append(`<option value="${camera.id}">${camera.numeroCamera} - ${camera.descrizione}</option>`);
+                        });
+                    },
+                    error: function () {
+                        console.error('Errore nel caricamento delle camere');
+                    }
+                });
+            }
+
+            fetchPrenotazioni();
+            fetchClienti();
+            fetchCamere();
+        });
     </script>
 </body>
 </html>

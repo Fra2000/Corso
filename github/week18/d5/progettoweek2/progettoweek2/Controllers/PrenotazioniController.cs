@@ -78,6 +78,20 @@ namespace progettoweek2.Controllers
             var clienti = clienteDao.GetAllClienti();
             return Ok(clienti);
         }
+
+        [HttpPost("Create")]
+        public IActionResult CreateCliente([FromBody] Cliente cliente)
+        {
+            bool result = clienteDao.AddCliente(cliente);
+            if (result)
+            {
+                return Ok(cliente);
+            }
+            else
+            {
+                return BadRequest("Errore nella creazione del cliente.");
+            }
+        }
     }
 
     // Camere Controller
@@ -97,6 +111,20 @@ namespace progettoweek2.Controllers
         {
             var camere = cameraDao.GetAllCamere();
             return Ok(camere);
+        }
+
+        [HttpPost("Create")]
+        public IActionResult CreateCamera([FromBody] Camera camera)
+        {
+            bool result = cameraDao.AddCamera(camera);
+            if (result)
+            {
+                return Ok(camera);
+            }
+            else
+            {
+                return BadRequest("Errore nella creazione della camera.");
+            }
         }
     }
 
