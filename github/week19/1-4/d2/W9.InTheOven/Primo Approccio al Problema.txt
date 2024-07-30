@@ -1,0 +1,37 @@
+﻿Prodotto
+	nome, foto, prezzo, tempo, ingredienti
+	
+	Ingrediente (molti a molti con prodotti)
+	descrizione....
+	
+Utente
+
+Ruolo
+	admin - cliente
+	
+Ordine
+	utente
+	evaso
+	indirizzo
+	noteaggiutive
+	
+	Prodotto ordinato (Prodotto<->prodottoordinato)
+		quantità
+		
+Azioni
+	Servizi gestione prodotti
+		CRUD Prodotti (Admin)
+		CRUD Ingredienti
+	
+	Servizi utente
+		Registrazione utente (cliente)
+		Login
+		
+	Servizi ordini
+		Creazione ordine
+			Aggiungere i prodotti ad un ordine
+		Conferma ordine
+	
+		Evaso (Admin)
+	
+	Report (admin)
