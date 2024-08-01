@@ -1,0 +1,77 @@
+﻿@model PizzeriaWebApp.Models.User
+
+@{
+    ViewData["Title"] = "Login";
+    bool invalidAdminPassword = ViewBag.InvalidAdminPassword ?? false;
+}
+
+<h2>Login</h2>
+
+<form asp-action="Login" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" name="email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" name="password" class="form-control" type="password" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Login" class="btn btn-primary" />
+    </div>
+</form>
+
+<h2>Register</h2>
+
+<form asp-action="Register" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" name="name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" name="email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" name="password" class="form-control" type="password" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Role"></label>
+        <select asp-for="Role" name="role" class="form-control" id="role-select">
+            <option value="User">User</option>
+            <option value="Administrator">Administrator</option>
+        </select>
+    </div>
+    <div class="form-group" id="admin-password" style="display:none;">
+        <label for="adminPassword">Admin Password</label>
+        <input name="adminPassword" class="form-control" type="password" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Register" class="btn btn-primary" />
+    </div>
+</form>
+
+@section Scripts {
+    <script>
+        document.getElementsByName("role")[0].addEventListener("change", function () {
+            var adminPasswordDiv = document.getElementById("admin-password");
+            if (this.value === "Administrator") {
+                adminPasswordDiv.style.display = "block";
+            } else {
+                adminPasswordDiv.style.display = "none";
+            }
+        });
+
+        // Reset role to User if admin password is invalid
+        @if (invalidAdminPassword)
+        {
+            <text>
+                document.getElementById("role-select").value = "User";
+            document.getElementById("admin-password").style.display = "none";
+            </text>
+        }
+    </script>
+}

@@ -1,0 +1,155 @@
+﻿@model PizzeriaWebApp.Models.ProductViewModel
+
+@{
+    ViewData["Title"] = "Admin - Product and Ingredient Management";
+}
+
+<h2>Product Management</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <h3>Create New Product</h3>
+        <form asp-action="CreateProduct" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label asp-for="NewProduct.Name"></label>
+                <input asp-for="NewProduct.Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="NewProduct.Photo"></label>
+                <input asp-for="NewProduct.Photo" class="form-control" type="file" />
+            </div>
+            <div class="form-group">
+                <label asp-for="NewProduct.Price"></label>
+                <input asp-for="NewProduct.Price" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="NewProduct.DeliveryTimeInMinutes"></label>
+                <input asp-for="NewProduct.DeliveryTimeInMinutes" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="NewProduct.Ingredients"></label>
+                <select asp-for="NewProduct.Ingredients" class="form-control" multiple>
+                    @foreach (var ingredient in Model.Ingredients)
+                    {
+                        <option value="@ingredient.Id">@ingredient.Name</option>
+                    }
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <h3>Edit Product</h3>
+        <form asp-action="EditProduct" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="EditProduct.Id" />
+            <div class="form-group">
+                <label asp-for="EditProduct.Name"></label>
+                <input asp-for="EditProduct.Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="EditProduct.Photo"></label>
+                <input asp-for="EditProduct.Photo" class="form-control" type="file" />
+            </div>
+            <div class="form-group">
+                <label asp-for="EditProduct.Price"></label>
+                <input asp-for="EditProduct.Price" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="EditProduct.DeliveryTimeInMinutes"></label>
+                <input asp-for="EditProduct.DeliveryTimeInMinutes" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="EditProduct.Ingredients"></label>
+                <select asp-for="EditProduct.Ingredients" class="form-control" multiple>
+                    @foreach (var ingredient in Model.Ingredients)
+                    {
+                        <option value="@ingredient.Id">@ingredient.Name</option>
+                    }
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+    </div>
+</div>
+
+<h3>Product List</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Delivery Time</th>
+            <th>Ingredients</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Products)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.DeliveryTimeInMinutes</td>
+                <td>
+                    @foreach (var ingredient in item.Ingredients)
+                    {
+                        <span>@ingredient.Name </span>
+                    }
+                </td>
+                <td>
+                    <button class="btn btn-warning" onclick="editProduct(@item.Id, '@item.Name', @item.Price, @item.DeliveryTimeInMinutes')">Edit</button>
+                    <form asp-action="DeleteProduct" method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Ingredient Management</h2>
+
+<h3>Create New Ingredient</h3>
+<form asp-action="CreateIngredient" method="post">
+    <div class="form-group">
+        <label asp-for="NewIngredient.Name"></label>
+        <input asp-for="NewIngredient.Name" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<h3>Ingredient List</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Ingredients)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>
+                    <form asp-action="DeleteIngredient" method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        function editProduct(id, name, price, deliveryTimeInMinutes) {
+            document.querySelector('input[name="EditProduct.Id"]').value = id;
+            document.querySelector('input[name="EditProduct.Name"]').value = name;
+            document.querySelector('input[name="EditProduct.Price"]').value = price;
+            document.querySelector('input[name="EditProduct.DeliveryTimeInMinutes"]').value = deliveryTimeInMinutes;
+        }
+    </script>
+}
