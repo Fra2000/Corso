@@ -1,0 +1,51 @@
+﻿@model PizzeriaWebApp.Models.AdminProductViewModel
+
+@{
+    ViewData["Title"] = "Manage Products";
+}
+
+<h2>Manage Products</h2>
+
+<h3>Add New Product</h3>
+<form asp-action="AdminProduct" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="NewProduct.Name"></label>
+        <input asp-for="NewProduct.Name" class="form-control" />
+        <span asp-validation-for="NewProduct.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewProduct.Photo"></label>
+        <input asp-for="NewProduct.Photo" class="form-control" type="file" />
+        <span asp-validation-for="NewProduct.Photo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewProduct.Price"></label>
+        <input asp-for="NewProduct.Price" class="form-control" />
+        <span asp-validation-for="NewProduct.Price" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewProduct.DeliveryTimeInMinutes"></label>
+        <input asp-for="NewProduct.DeliveryTimeInMinutes" class="form-control" />
+        <span asp-validation-for="NewProduct.DeliveryTimeInMinutes" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewProduct.Ingredients">Ingredients</label>
+        <select asp-for="NewProduct.Ingredients" class="form-control" multiple name="selectedIngredients">
+            @foreach (var ingredient in Model.Ingredients)
+            {
+                <option value="@ingredient.Id">@ingredient.Name</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Product</button>
+</form>
+
+<h3>Product List</h3>
+<ul>
+    @foreach (var product in Model.Products)
+    {
+        <li>@product.Name</li>
+    }
+</ul>
