@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using PizzeriaWebApp.Data;
+
 using Microsoft.Extensions.Logging;
+using PizzeriaWebApp.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,9 @@ builder.Services.AddControllersWithViews();
 // Configure DbContext with SQL Server
 builder.Services.AddDbContext<PizzeriaDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+
 
 // Configure logging
 builder.Logging.ClearProviders();

@@ -42,25 +42,25 @@ namespace PizzeriaWebApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AdminProduct(AdminProductViewModel viewModel, IFormFile photo, int[] selectedIngredients)
+        public async Task<IActionResult> AdminProduct(AdminProductViewModel viewModel, IFormFile Photo, int[] selectedIngredients)
         {
             _logger.LogInformation("AdminProduct POST method called.");
 
-            // Rimuovere i campi che non sono rilevanti per la creazione di un prodotto
             ModelState.Remove("NewIngredient.Name");
             ModelState.Remove("NewIngredient.Description");
 
             if (ModelState.IsValid && viewModel.NewProduct != null)
             {
-                _logger.LogInformation("ModelState is valid. Adding new product: {@NewProduct}", viewModel.NewProduct);
+                _logger.LogInformation("ModelState is valid. Attempting to add new product.");
 
                 // Gestione del file caricato
-                if (photo != null && photo.Length > 0)
+                if (Photo != null && Photo.Length > 0)
                 {
                     using (var memoryStream = new MemoryStream())
                     {
-                        await photo.CopyToAsync(memoryStream);
-                        viewModel.NewProduct.Photo = memoryStream.ToArray();
+                        await Photo.CopyToAsync(memoryStream);
+                        // Converti l'array di byte in una stringa Base64
+                        viewModel.NewProduct.Photo = Convert.ToBase64String(memoryStream.ToArray());
                     }
                 }
                 else
@@ -71,8 +71,7 @@ namespace PizzeriaWebApp.Controllers
                     return View("~/Views/Account/AdminProduct.cshtml", viewModel);
                 }
 
-                // Associa gli ingredienti selezionati al prodotto
-                if (selectedIngredients != null)
+                if (selectedIngredients != null && selectedIngredients.Length > 0)
                 {
                     foreach (var ingredientId in selectedIngredients)
                     {
@@ -116,7 +115,6 @@ namespace PizzeriaWebApp.Controllers
         {
             _logger.LogInformation("AdminIngredient POST method called.");
 
-            // Rimuovere i campi che non sono rilevanti per la creazione di un ingrediente
             ModelState.Remove("NewProduct.Name");
             ModelState.Remove("NewProduct.Photo");
             ModelState.Remove("NewProduct.Price");
@@ -130,10 +128,7 @@ namespace PizzeriaWebApp.Controllers
                 _logger.LogInformation("New ingredient saved successfully.");
                 return RedirectToAction("AdminIngredient");
             }
-            else
-            {
-                _logger.LogWarning("ModelState is invalid. Errors: {Errors}", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage));
-            }
+            
 
             viewModel.Ingredients = await _context.Ingredients.ToListAsync();
             return View("~/Views/Account/AdminIngredient.cshtml", viewModel);

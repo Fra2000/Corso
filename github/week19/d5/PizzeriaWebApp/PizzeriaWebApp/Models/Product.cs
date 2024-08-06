@@ -12,9 +12,7 @@ namespace PizzeriaWebApp.Models
 
         [Required, StringLength(50)]
         public string Name { get; set; }
-
-        [Required]
-        public byte[] Photo { get; set; }
+        public string Photo { get; set; }
 
         [Range(0, 100)]
         [Precision(18, 2)]
