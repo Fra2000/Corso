@@ -1,9 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PizzeriaWebApp.Data;
 
-using Microsoft.Extensions.Logging;
-using PizzeriaWebApp.Controllers;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure cookie-based authentication
@@ -13,7 +10,14 @@ builder.Services.AddAuthentication("CookieAuth")
         options.LoginPath = "/Account/Login";
         options.AccessDeniedPath = "/Account/AccessDenied";
         options.Cookie.Name = "PizzeriaWebAppAuth";
+        options.Cookie.HttpOnly = true;
+        options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+        options.Cookie.SameSite = SameSiteMode.Strict;
+        options.ExpireTimeSpan = TimeSpan.FromDays(30);
+        options.SlidingExpiration = true;
     });
+
+
 
 // Add services to the container including MVC
 builder.Services.AddControllersWithViews();

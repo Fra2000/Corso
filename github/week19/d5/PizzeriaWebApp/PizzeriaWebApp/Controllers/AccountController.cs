@@ -1,13 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PizzeriaWebApp.Data;
 using PizzeriaWebApp.Models;
-using System.Collections.Generic;
 using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
 
 public class AccountController : Controller
 {
@@ -24,6 +20,12 @@ public class AccountController : Controller
     {
         return View(new User());
     }
+    public async Task<IActionResult> HomeUtente()
+    {
+        var products = await _context.Products.Include(p => p.Ingredients).ToListAsync();
+        return View("HomeUtente", products);
+    }
+
 
     [HttpPost]
     public async Task<IActionResult> Login(string email, string password)
@@ -46,8 +48,7 @@ public class AccountController : Controller
                     claims, "CookieAuth");
 
                 var authProperties = new AuthenticationProperties
-                {
-                    // Configurazioni aggiuntive come il redirect dopo il login
+                {                   
                 };
 
                 await HttpContext.SignInAsync(
@@ -62,7 +63,7 @@ public class AccountController : Controller
                 }
                 else
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("HomeUtente", "Account");
                 }
             }
 
@@ -84,7 +85,7 @@ public class AccountController : Controller
             if (role == "Administrator" && adminPassword != "100")
             {
                 ModelState.AddModelError(string.Empty, "Invalid admin password.");
-                ViewBag.InvalidAdminPassword = true; // Indica alla view che la password admin è errata
+                ViewBag.InvalidAdminPassword = true;
                 return View("Login", new User { Name = name, Email = email, Password = password, Role = role });
             }
 
@@ -93,7 +94,7 @@ public class AccountController : Controller
                 Name = name,
                 Email = email,
                 Password = password,
-                Role = role // Assicurati che il ruolo sia corretto ("User" o "Administrator")
+                Role = role 
             };
 
             _context.Users.Add(user);
@@ -104,7 +105,7 @@ public class AccountController : Controller
             return RedirectToAction("Login");
         }
 
-        // Log dettagliato degli errori
+        
         foreach (var modelState in ModelState.Values)
         {
             foreach (var error in modelState.Errors)

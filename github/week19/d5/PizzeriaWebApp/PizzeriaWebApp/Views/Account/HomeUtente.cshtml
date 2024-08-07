@@ -1,0 +1,50 @@
+﻿@model IEnumerable<PizzeriaWebApp.Models.Product>
+
+@{
+    ViewData["Title"] = "Home Utente";
+}
+
+<h2>Benvenuto, @User.Identity.Name!</h2>
+<h3>Prodotti Disponibili</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Prezzo</th>
+            <th>Tempo di consegna</th>
+            <th>Ingredienti</th>
+            <th>Quantità</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Price.ToString("C")</td>
+                <td>@product.DeliveryTimeInMinutes minuti</td>
+                <td>@string.Join(", ", product.Ingredients.Select(i => i.Name))</td>
+                <td>
+                    <input type="number" min="1" value="1" name="quantity-@product.Id" class="form-control" style="width: 75px;" />
+                </td>
+                <td>
+                    <button class="btn btn-primary" onclick="addToCart(@product.Id)">Aggiungi al carrello</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="@Url.Action("Carrello", "User")" class="btn btn-primary">Vai al Carrello</a>
+
+
+@section Scripts {
+    <script>
+        function addToCart(productId) {
+            var quantity = document.getElementsByName('quantity-' + productId)[0].value;
+            console.log('Aggiungere al carrello:', productId, 'Quantità:', quantity);
+            
+        }
+    </script>
+}

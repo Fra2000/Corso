@@ -1,12 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PizzeriaWebApp.Data;
 using PizzeriaWebApp.Models;
-using System.Threading.Tasks;
+
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using System.Linq;
-using Microsoft.AspNetCore.Http;
-using System.IO;
+
 
 namespace PizzeriaWebApp.Controllers
 {
@@ -21,7 +18,7 @@ namespace PizzeriaWebApp.Controllers
             _logger = logger;
         }
 
-        // Dashboard Amministrativa
+        
         public IActionResult Admin()
         {
             _logger.LogInformation("Navigating to Admin Dashboard.");
@@ -42,7 +39,7 @@ namespace PizzeriaWebApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AdminProduct(AdminProductViewModel viewModel, IFormFile Photo, int[] selectedIngredients)
+        public async Task<IActionResult> AdminProduct(AdminProductViewModel viewModel, int[] selectedIngredients)
         {
             _logger.LogInformation("AdminProduct POST method called.");
 
@@ -53,23 +50,7 @@ namespace PizzeriaWebApp.Controllers
             {
                 _logger.LogInformation("ModelState is valid. Attempting to add new product.");
 
-                // Gestione del file caricato
-                if (Photo != null && Photo.Length > 0)
-                {
-                    using (var memoryStream = new MemoryStream())
-                    {
-                        await Photo.CopyToAsync(memoryStream);
-                        // Converti l'array di byte in una stringa Base64
-                        viewModel.NewProduct.Photo = Convert.ToBase64String(memoryStream.ToArray());
-                    }
-                }
-                else
-                {
-                    ModelState.AddModelError("NewProduct.Photo", "The Photo field is required.");
-                    viewModel.Products = await _context.Products.Include(p => p.Ingredients).ToListAsync();
-                    viewModel.Ingredients = await _context.Ingredients.ToListAsync();
-                    return View("~/Views/Account/AdminProduct.cshtml", viewModel);
-                }
+              
 
                 if (selectedIngredients != null && selectedIngredients.Length > 0)
                 {
@@ -116,7 +97,6 @@ namespace PizzeriaWebApp.Controllers
             _logger.LogInformation("AdminIngredient POST method called.");
 
             ModelState.Remove("NewProduct.Name");
-            ModelState.Remove("NewProduct.Photo");
             ModelState.Remove("NewProduct.Price");
             ModelState.Remove("NewProduct.DeliveryTimeInMinutes");
 

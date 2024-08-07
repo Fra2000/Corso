@@ -25,9 +25,10 @@ namespace PizzeriaWebApp.Data
             modelBuilder.Entity<Product>()
                 .HasMany(p => p.Ingredients)
                 .WithMany(i => i.Products)
-                .UsingEntity(j => j.ToTable("ProductIngredients")); // Tabella di join
+                .UsingEntity(j => j.ToTable("ProductIngredients")); 
 
-            // Altre configurazioni rimangono invariate
+            
         }
+
     }
 }
